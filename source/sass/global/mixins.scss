@@ -1,0 +1,34 @@
+@mixin poppins-regular() {
+  font-family: "Poppins Regular", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  color: $basic-grey;
+}
+
+@mixin poppins-medium() {
+  font-family: "Poppins Medium", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  color: $basic-dark;
+}
+
+@mixin cormorantgaramond-mediumitalic() {
+  font-family: "Cormorant Garamond Medium Italic", "Arial", sans-serif;
+  font-size: 25px;
+  line-height: 29px;
+  color: $roboto-condensed-bold-font-color;
+}
+
+@mixin roboto-condensed-regular() {
+  font-family: "Cormorant Garamond Semibold", "Arial", sans-serif;
+  font-size: 22px;
+  line-height: 34px;
+  color: $roboto-condensed-regular-font-color;
+}
+
+@mixin roboto-medium() {
+  font-family: "Cormorant Garamond Bold", "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  color: $roboto-medium-font-color;
+}
