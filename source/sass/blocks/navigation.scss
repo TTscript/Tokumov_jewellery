@@ -1,0 +1,31 @@
+.navigation {
+  border-top: 1px solid $basic-line;
+  margin: 0;
+  padding: 18px 0 0 0;
+
+  @media (max-width: $max-tablet) {
+    display: none;
+  }
+}
+
+.navigation ul {
+  display: flex;
+  max-width: 481px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navigation li {
+  white-space: nowrap;
+  margin: 0 35px 0 0;
+  padding: 0;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.navigation a {
+  color: $basic-dark;
+}

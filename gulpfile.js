@@ -105,7 +105,7 @@ function devcss() {
 }
 
 function svgsprite() {
-  return src('source/img/*.svg')
+  return src('source/img/**/*.svg')
     .pipe(svgmin())
     .pipe(svgstore())
     .pipe(rename('svgsprite.svg'))

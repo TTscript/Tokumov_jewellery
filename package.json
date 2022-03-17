@@ -2,7 +2,7 @@
   "name": "jewellery",
   "version": "1.0.0",
   "description": "web-site about jewellery",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "editorconfig": "editorconfig-checker",
     "stylelint": "stylelint \"source/sass/**/*.scss\"",

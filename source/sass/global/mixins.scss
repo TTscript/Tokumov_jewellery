@@ -14,21 +14,21 @@
 
 @mixin cormorantgaramond-mediumitalic() {
   font-family: "Cormorant Garamond Medium Italic", "Arial", sans-serif;
-  font-size: 25px;
-  line-height: 29px;
-  color: $roboto-condensed-bold-font-color;
+  font-size: 45px;
+  line-height: 59px;
+  color: $basic-white;
 }
 
-@mixin roboto-condensed-regular() {
+@mixin cormorantgaramond-semibold() {
   font-family: "Cormorant Garamond Semibold", "Arial", sans-serif;
-  font-size: 22px;
+  font-size: 26px;
   line-height: 34px;
-  color: $roboto-condensed-regular-font-color;
+  color: $basic-black;
 }
 
 @mixin roboto-medium() {
   font-family: "Cormorant Garamond Bold", "Arial", sans-serif;
-  font-size: 12px;
-  line-height: 14px;
-  color: $roboto-medium-font-color;
+  font-size: 45px;
+  line-height: 59px;
+  color: $basic-white;
 }
