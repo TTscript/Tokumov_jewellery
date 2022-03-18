@@ -50,6 +50,11 @@
   border: 0;
   padding: 0 0 0 30px;
 
+  &:hover {
+    outline: 1px solid $basic-black;
+    transition: 0.2s;
+  }
+
   &::placeholder {
     color: $basic-grey;
     font-size: 14px;
@@ -139,6 +144,15 @@
 
 .page-header__login-block a {
   color: $basic-dark;
+
+  &:hover {
+    color: $basic-brown;
+    transition: 0.2s;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 }
 
 .page-header__tablet {

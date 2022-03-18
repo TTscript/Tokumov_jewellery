@@ -28,4 +28,13 @@
 
 .navigation a {
   color: $basic-dark;
+
+  &:hover {
+    color: $basic-brown;
+    transition: 0.2s;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 }

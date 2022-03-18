@@ -1,0 +1,116 @@
+.sign-up {
+  // max-width: 500px;
+  min-width: 43%;
+  transform: translateY(-6px);
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    margin-bottom: 39px;
+  }
+
+  @media (max-width: $max-mobile) {
+    margin-bottom: 40px;
+  }
+}
+
+.sign-up > p {
+  @include cormorantgaramond-bold();
+  font-size: 34px;
+  line-height: 44px;
+  color: $basic-white;
+  letter-spacing: 0.03em;
+  margin: 0 0 8px;
+  padding: 0;
+
+  &:last-of-type {
+    @include poppins-regular();
+    font-size: 15px;
+    color: $basic-grey;
+    text-indent: 5px;
+    margin: 0 0 45px;
+
+    @media (max-width: $max-mobile) {
+      text-indent: unset;
+    }
+  }
+
+  @media (max-width: 325px) {
+    max-width: 240px;
+  }
+}
+
+.sign-up__input-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid $basic-white;
+  // min-width: 500px;
+  max-width: 566px;
+  margin: 0;
+  padding: 0 0 8px;
+}
+
+.sign-up__input-wrapper input {
+  // min-width: 76%;
+  flex: 1;
+  background-color: transparent;
+  border: 0;
+  color: $basic-white;
+
+  &:hover {
+    outline: 1px solid $basic-white;
+  }
+
+  &::placeholder {
+    color: $basic-grey;
+    font-size: 14px;
+  }
+}
+
+.sign-up__input-wrapper p {
+  text-indent: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.sign-up__input-wrapper a {
+  position: relative;
+  white-space: nowrap;
+  color: $basic-white;
+  margin: 0;
+  padding: 10px 0 10px 10px;
+
+  &:hover {
+    opacity: 0.6;
+    transition: 0.2s;
+    color: $basic-brown;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
+  &::after {
+    content: "";
+    // position: absolute;
+    // top: 16px;
+    // right: 14px;
+    display: inline-block;
+    -webkit-mask: url("../img/decor/arrow.svg") no-repeat 50% 50%;
+    mask: url("../img/decor/arrow.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: $basic-white;
+    background-size: 29px 9px;
+    width: 29px;
+    height: 9px;
+    transform: rotate(180deg);
+    margin-left: 15px;
+  }
+}
+
+.sign-up__input-wrapper a:hover {
+  &::after {
+    background-color: $basic-brown;
+  }
+}
