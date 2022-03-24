@@ -38,6 +38,7 @@
     "stylelint": "^14.3.0",
     "stylelint-config-htmlacademy": "^0.1.12",
     "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
-    "stylelint-scss": "^4.1.0"
+    "stylelint-scss": "^4.1.0",
+    "swiper": "^6.8.4"
   }
 }

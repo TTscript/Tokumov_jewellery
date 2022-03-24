@@ -1,0 +1,99 @@
+.price {
+  border: 0;
+  margin: 0;
+  padding: 0 25px;
+}
+
+.price legend {
+  position: relative;
+  margin: 0 0 23px;
+  padding: 25px 0 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: -159px;
+    margin-left: 10px;
+    background: url("../img/decor/accordion-arrow.svg");
+    width: 15px;
+    height: 8px;
+  }
+}
+
+.price label {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.price__scrollbar {
+  position: relative;
+  margin: 0 0 5px;
+  padding: 0 0 0 9px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid $basic-beige;
+    min-width: 100%;
+  }
+}
+
+.price__scrollbar-active-line {
+  max-width: 90px;
+  margin: 0 auto;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 59px;
+    border-bottom: 1px solid $basic-brown;
+    min-width: 90px;
+  }
+}
+
+.price__toggles {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 44px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $basic-brown;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 150px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $basic-brown;
+  }
+}
+
+.price__tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 72px;
+}
+
+.price__tags p {
+  font-size: 14px;
+  line-height: 18px;
+}

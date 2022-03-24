@@ -1,0 +1,39 @@
+.product {
+  border: 0;
+  border-bottom: 1px solid $basic-brown;
+  margin: 0;
+  padding: 0 25px;
+}
+
+.product legend {
+  position: relative;
+  margin: 0 0 20px;
+  padding: 25px 0 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 29px;
+    right: -135px;
+    margin-left: 10px;
+    background: url("../img/decor/accordion-arrow.svg");
+    width: 15px;
+    height: 8px;
+  }
+}
+
+.product div {
+  margin: 0 0 10px;
+  padding: 0 0 0 9px;
+
+  &:last-child {
+    margin-bottom: 23px;
+  }
+}
+
+.product label {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+}

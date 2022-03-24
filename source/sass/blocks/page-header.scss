@@ -1,6 +1,7 @@
 .page-header {
-  margin: 0;
+  margin: 0 0 23px;
   padding: 17px 50px 0;
+  z-index: 2;
 
   @media (max-width: $max-tablet) {
     padding: 27px 45px 0;
@@ -8,6 +9,7 @@
 
   @media (max-width: $max-mobile) {
     padding: 10px 15px 0;
+    margin: 0 0 6px;
   }
 }
 
@@ -18,6 +20,10 @@
   max-width: 1168px;
   margin: 0 auto 26px;
   padding: 0;
+
+  @media (max-width: $max-tablet) {
+    margin: 0 auto 5px;
+  }
 }
 
 .page-header__search-block {
@@ -98,27 +104,17 @@
 
 .page-header__login-block {
   display: flex;
+  z-index: 2;
   margin: 0;
   padding: 0;
 
-  @media (max-width: $max-tablet) {
-    &::before {
-      content: "";
-      display: block;
-      -webkit-mask: url("../img/decor/bag.svg") no-repeat 50% 50%;
-      mask: url("../img/decor/bag.svg") no-repeat 50% 50%;
-      -webkit-mask-size: cover;
-      mask-size: cover;
-      background-size: 18px 16px;
-      width: 18px;
-      height: 16px;
-      background-color: $basic-dark;
-      transition: 1s;
-    }
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.2s;
   }
 }
 
-.page-header__login-block.page-header__login-block--change-bag {
+.page-header__login-block.page-header__login-block--change-bag a:last-child {
   @media (max-width: $max-tablet) {
     &::before {
       background-color: $basic-white;
@@ -135,10 +131,10 @@
 
   &:first-child {
     margin-right: 35px;
-  }
 
-  @media (max-width: $max-tablet) {
-    display: none;
+    @media (max-width: $max-tablet) {
+      display: none;
+    }
   }
 }
 
@@ -152,6 +148,29 @@
 
   &:active {
     opacity: 0.6;
+  }
+
+
+  &:last-child {
+    @media (max-width: $max-tablet) {
+      display: block;
+      font-size: 0;
+      line-height: 0;
+
+      &::before {
+        content: "";
+        display: block;
+        -webkit-mask: url("../img/decor/bag.svg") no-repeat 50% 50%;
+        mask: url("../img/decor/bag.svg") no-repeat 50% 50%;
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        background-size: 18px 16px;
+        width: 18px;
+        height: 16px;
+        background-color: $basic-dark;
+        transition: 1s;
+      }
+    }
   }
 }
 

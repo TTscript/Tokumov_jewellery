@@ -1,0 +1,23 @@
+.catalog-goods {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-goods__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 36px;
+  max-width: 870px;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: $max-mobile) {
+    row-gap: 25px;
+  }
+}

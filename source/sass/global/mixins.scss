@@ -12,6 +12,13 @@
   color: $basic-dark;
 }
 
+@mixin poppins-bold() {
+  font-family: "Poppins Bold", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: $basic-dark;
+}
+
 @mixin cormorantgaramond-mediumitalic() {
   font-family: "Cormorant Garamond Medium Italic", "Arial", sans-serif;
   font-size: 45px;

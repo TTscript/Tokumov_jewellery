@@ -1,0 +1,27 @@
+.checkbox label {
+  margin: 0;
+  padding: 0;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid $basic-brown;
+    margin: 0 11px 0 0;
+    padding: 0;
+  }
+}
+
+.checkbox input:checked + label {
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid $basic-brown;
+    background-color: $basic-brown;
+    margin: 0 11px 0 0;
+    padding: 0;
+  }
+}

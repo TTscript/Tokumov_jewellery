@@ -1,0 +1,24 @@
+.filter {
+  border: 1px solid $basic-brown;
+  max-width: 256px;
+  margin: 0 0 35px 0;
+  padding: 0;
+
+  @media (max-width: 1169px) {
+    display: none;
+  }
+}
+
+.filter--display-none {
+  display: none;
+}
+
+.filter .filter__material {
+  border-bottom: 1px solid $basic-brown;
+}
+
+.filter .filter__collection {
+  border-bottom: 1px solid $basic-brown;
+}
+
+

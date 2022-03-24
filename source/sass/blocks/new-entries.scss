@@ -1,0 +1,106 @@
+.new-entries {
+  margin: 0 0 115px;
+  padding: 0 45px;
+
+  @media (max-width: $max-tablet) {
+    margin: 0 0 65px;
+    padding: 0 25px;
+
+  }
+
+  @media (max-width: $max-mobile) {
+    margin: 0 0 55px;
+  }
+}
+
+.new-entries__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1166px;
+  min-width: 0;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    max-width: 678px;
+  }
+}
+
+.new-entries__left-arrow {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../img/decor/arrow.svg") no-repeat;
+    width: 29px;
+    height: 10px;
+    cursor: pointer;
+
+    @media (max-width: $max-tablet) {
+      width: 40px;
+      height: 30px;
+      background-size: 36px 33px;
+    }
+
+    @media (max-width: $max-mobile) {
+      display: none;
+    }
+  }
+}
+
+.new-entries__right-arrow {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url("../img/decor/arrow.svg") no-repeat;
+    width: 29px;
+    height: 10px;
+    transform: rotate(180deg);
+    cursor: pointer;
+
+    @media (max-width: $max-tablet) {
+      width: 40px;
+      height: 30px;
+      background-size: 36px 33px;
+    }
+
+    @media (max-width: $max-mobile) {
+      display: none;
+    }
+  }
+}
+
+.new-entries__inner h3 {
+  @include cormorantgaramond-bold();
+  color: $basic-dark;
+  font-size: 34px;
+  line-height: 44px;
+  text-align: center;
+  margin: 0 0 25px;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    margin: 0 0 20px;
+  }
+}
+
+.new-entries__inner > p {
+  border-bottom: 1px solid $basic-brown;
+  text-align: center;
+  margin: 0 0 60px;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    margin: 0 0 53px;
+  }
+
+  @media (max-width: $max-mobile) {
+    margin: 0 0 41px;
+  }
+}

@@ -1,0 +1,84 @@
+.goods {
+  max-width: 1280px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: 1s;
+  margin: 0 auto 52px;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    margin: 0 auto 43px;
+  }
+
+  @media (max-width: $max-mobile) {
+    margin: 0 auto 33px;
+  }
+}
+
+.goods p {
+  margin: 0;
+  padding: 0;
+}
+
+.goods__card {
+  flex-shrink: 0;
+  margin: 0 30px 0 0;
+  padding: 0;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.goods__card img {
+  margin: 0 0 15px;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    width: 324px;
+    height: 340px;
+  }
+
+  @media (max-width: $max-mobile) {
+    width: 130px;
+    height: 136px;
+    margin: 0 0 11px;
+  }
+}
+
+.goods__amethyst h4 {
+  @media (max-width: $max-tablet) {
+    text-indent: 15px;
+  }
+
+  @media (max-width: $max-mobile) {
+    max-width: 130px;
+    text-indent: 0;
+  }
+}
+
+.goods__gold-chain {
+  @media (max-width: $max-tablet) {
+    // display: none;
+  }
+}
+
+.goods__earrings {
+  @media (max-width: $max-tablet) {
+    // display: none;
+  }
+}
+
+.goods__card h4 {
+  text-align: center;
+  margin: 0 0 5px;
+  padding: 0;
+}
+
+.goods__card p {
+  @include poppins-bold();
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}

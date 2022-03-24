@@ -21,6 +21,7 @@
   max-width: 1174px;
   margin: 0 auto;
   padding: 0;
+  z-index: 1;
 
   @media (max-width: $max-tablet) {
     display: block;

@@ -1,0 +1,62 @@
+.main-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("../img/desktop/main/background/main-block.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 463px;
+  width: 100%;
+  background-color: $basic-brown;
+  margin: 0 0 119px;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    background: url("../img/tablet/main/background/main-block.png") no-repeat;
+    background-size: cover;
+    margin: 0 0 71px;
+  }
+
+  @media (max-width: $max-mobile) {
+    background: url("../img/mobile/main/background/main-block.png") no-repeat;
+    background-size: cover;
+    margin: 0 0 62px;
+  }
+}
+
+.main-block h3 {
+  @include cormorantgaramond-bold();
+  line-height: 51px;
+  letter-spacing: 0.03em;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    padding: 5px 16px 0 0px;
+  }
+
+  @media (max-width: $max-mobile) {
+    font-size: 38px;
+    line-height: 49px;
+    padding: 1px 0 0;
+  }
+}
+
+.main-block p {
+  @include cormorantgaramond-mediumitalic();
+  font-size: 38px;
+  line-height: 49px;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    padding: 0px 16px 0 0px;
+  }
+
+  @media (max-width: $max-mobile) {
+    font-size: 34px;
+    line-height: 44px;
+    padding: 0;
+  }
+}

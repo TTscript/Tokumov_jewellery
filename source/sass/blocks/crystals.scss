@@ -1,0 +1,91 @@
+.crystals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 1200px) {
+    margin: 0 0 30px;
+  }
+
+  @media (max-width: $max-tablet) {
+    margin: 0 0 50px;
+  }
+
+  @media (max-width: $max-mobile) {
+    flex-direction: column;
+    margin: 0 0 40px;
+  }
+}
+
+.crystals__picture {
+  order: 2;
+  background: url("../img/desktop/main/blog/crystals.jpg") no-repeat;
+  background-size: cover;
+  min-width: 285px;
+  min-height: 300px;
+
+  @media (max-width: $max-tablet) {
+    background: url("../img/tablet/main/blog/crystals.jpg") no-repeat;
+    min-width: 339px;
+    min-height: 300px;
+  }
+
+  @media (max-width: $max-mobile) {
+    background: url("../img/mobile/main/blog/crystals.jpg") no-repeat;
+    order: unset;
+    min-width: 290px;
+    min-height: 256px;
+  }
+}
+
+.crystals__text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-color: $basic-beige;
+  min-width: 285px;
+  min-height: 300px;
+  margin: 0;
+  padding: 66px 60px 20px;
+
+  @media (max-width: $max-tablet) {
+    min-width: 339px;
+    min-height: 300px;
+  }
+
+  @media (max-width: $max-mobile) {
+    min-width: 290px;
+    min-height: 256px;
+    padding: 44px 60px 20px;
+  }
+}
+
+.crystals p {
+  &:first-of-type {
+    font-size: 14px;
+    line-height: 18px;
+    color: $basic-grey;
+    margin: 0 0 14px;
+    padding: 0;
+  }
+
+  &:last-of-type {
+    border-bottom: 1px solid $basic-brown;
+    margin: 0;
+    padding: 0 0 3px;
+  }
+}
+
+.crystals h3 {
+  @include cormorantgaramond-semibold();
+  text-align: center;
+  margin: 0 0 38px;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    max-width: 120px;
+  }
+}

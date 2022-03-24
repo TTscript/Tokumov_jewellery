@@ -1,0 +1,41 @@
+.catalog-background {
+  background: url("../img/desktop/catalog/main-block.png") no-repeat;
+  background-size: cover;
+  min-height: 261px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 0 79px;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    background: url("../img/tablet/catalog/main-block.png") no-repeat;
+    background-size: cover;
+    margin: 0 0 50px;
+  }
+
+  @media (max-width: $max-mobile) {
+    background: url("../img/mobile/catalog/main-block.png") no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin: 0 0 40px;
+    padding: 0 15px;
+  }
+}
+
+.catalog-background h2 {
+  @include cormorantgaramond-bold();
+  font-size: 34px;
+  line-height: 44px;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-background p {
+  @include cormorantgaramond-mediumitalic();
+  font-size: 22px;
+  line-height: 29px;
+  margin: 0;
+  padding: 0;
+}

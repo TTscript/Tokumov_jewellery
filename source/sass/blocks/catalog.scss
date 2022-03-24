@@ -1,0 +1,27 @@
+.catalog {
+  margin: 0 0 74px;
+  padding: 0;
+
+  @media (max-width: $max-mobile) {
+    row-gap: 25px;
+  }
+
+  @media (max-width: 449px) {
+    margin: 0 0 66px;
+  }
+}
+
+.catalog__inner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 1169px) {
+    display: block;
+  }
+}
+

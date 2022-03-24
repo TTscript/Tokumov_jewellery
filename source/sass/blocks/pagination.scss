@@ -1,0 +1,101 @@
+.pagination {
+  margin: 0;
+  padding: 0;
+}
+
+.pagination__desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-width: 50px;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: $max-tablet) {
+    display: none;
+  }
+}
+
+.pagination__desktop a {
+  color: $basic-grey;
+
+  &:first-child {
+    color: $basic-dark;
+  }
+}
+
+.pagination__desktop .pagination__desktop--passive-number {
+  color: $basic-grey;
+
+  &:first-child {
+    color: $basic-grey;
+  }
+}
+
+.pagination__desktop .pagination__desktop--active-number {
+  color: $basic-dark;
+
+  &:first-child {
+    color: $basic-dark;
+  }
+}
+
+.pagination__tablet {
+  display: none;
+
+  @media (max-width: $max-tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-width: 120px;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: $max-mobile) {
+    display: none;
+  }
+}
+
+.pagination__tablet a {
+  color: $basic-grey;
+
+  &:first-child {
+    color: $basic-dark;
+  }
+}
+
+.pagination__tablet .pagination__tablet--passive-number {
+  color: $basic-grey;
+
+  &:first-child {
+    color: $basic-grey;
+  }
+}
+
+.pagination__tablet .pagination__tablet--active-number {
+  color: $basic-dark;
+
+  &:first-child {
+    color: $basic-dark;
+  }
+}
+
+.pagination__mobile {
+  display: none;
+
+  @media (max-width: $max-mobile) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+// .pagination p {
+//   color: $basic-dark;
+//   margin: 0;
+//   padding: 0;
+// }
+
+.pagination span {
+  margin-right: 10px;
+}

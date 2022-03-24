@@ -1,0 +1,74 @@
+.shape {
+  margin: 0;
+  padding: 0;
+}
+
+.shape__inner {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 1169px) {
+    display: block;
+    max-width: 870px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: $max-tablet) {
+    max-width: 680px;
+  }
+
+  @media (max-width: 677px) {
+    max-width: 445px;
+  }
+
+  @media (max-width: 449px) {
+    max-width: 290px;
+  }
+}
+
+.shape button[type="submit"] {
+  border: 0;
+  color: $basic-white;
+  min-width: 250px;
+  min-height: 68px;
+  background-color: $basic-brown;
+  margin: 0 0 25px 0;
+  padding: 0;
+
+  @media (max-width: 1169px) {
+    display: none;
+  }
+}
+
+.shape button[type="button"] {
+  border: 1px solid $basic-brown;
+  color: $basic-dark;
+  background-color: transparent;
+  min-width: 250px;
+  min-height: 68px;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 1169px) {
+    min-width: 100%;
+    color: $basic-white;
+    background-color: $basic-brown;
+    margin: 0 0 50px;
+
+    &::before {
+      content: "Filter";
+    }
+  }
+
+  @media (max-width: $max-mobile) {
+    margin: 0 0 40px;
+  }
+}
+
+.shape span {
+  @media (max-width: 1169px) {
+    display: none;
+  }
+}
