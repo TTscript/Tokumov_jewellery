@@ -1,4 +1,7 @@
 import './filter.js';
+import './filter-popup.js';
+import './accordion.js';
+import './login.js';
 
 const burgerClosed = document.querySelector('.burger-closed');
 const burgerOpen = document.querySelector('.burger-open');

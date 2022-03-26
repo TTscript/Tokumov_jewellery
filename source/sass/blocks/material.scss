@@ -3,12 +3,28 @@
   border-bottom: 1px solid $basic-brown;
   margin: 0;
   padding: 0 25px;
+
+  @media (max-width: 1169px) {
+    padding: 0 21px;
+  }
 }
 
 .material legend {
   position: relative;
   margin: 0 0 20px;
   padding: 25px 0 0;
+
+  @media (max-width: 1169px) {
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0 0 32px;
+    padding: 36px 0 0;
+  }
+
+  @media (max-width: 450px) {
+    margin: 0 0 22px;
+    padding: 26px 0 0;
+  }
 
   &::after {
     content: "";
@@ -17,9 +33,22 @@
     right: -135px;
     margin-left: 10px;
     background: url("../img/decor/accordion-arrow.svg");
+    background-size: cover;
     width: 15px;
     height: 8px;
     transform: rotate(180deg);
+
+    @media (max-width: 1169px) {
+      top: 41px;
+      right: -286px;
+      width: 23px;
+      height: 12px;
+    }
+
+    @media (max-width: 450px) {
+      top: 31px;
+      right: -156px;
+    }
   }
 }
 
@@ -35,6 +64,14 @@
 
   &:last-child {
     margin-bottom: 23px;
+
+    @media (max-width: 1169px) {
+      margin-bottom: 35px;
+    }
+  }
+
+  @media (max-width: 1169px) {
+    margin: 0 0 15px;
   }
 }
 
@@ -43,4 +80,9 @@
   line-height: 18px;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 1169px) {
+    font-size: 16px;
+    line-height: 21px;
+  }
 }

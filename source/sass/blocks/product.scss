@@ -3,12 +3,28 @@
   border-bottom: 1px solid $basic-brown;
   margin: 0;
   padding: 0 25px;
+
+  @media (max-width: 1169px) {
+    padding: 0 21px;
+  }
 }
 
 .product legend {
   position: relative;
   margin: 0 0 20px;
   padding: 25px 0 0;
+
+  @media (max-width: 1169px) {
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0 0 24px;
+    padding: 36px 0 0;
+  }
+
+  @media (max-width: 450px) {
+    margin: 0 0 22px;
+    padding: 78px 0 0;
+  }
 
   &::after {
     content: "";
@@ -17,8 +33,27 @@
     right: -135px;
     margin-left: 10px;
     background: url("../img/decor/accordion-arrow.svg");
+    background-size: cover;
     width: 15px;
     height: 8px;
+
+    @media (max-width: 1169px) {
+      top: 41px;
+      right: -290px;
+      width: 23px;
+      height: 12px;
+    }
+
+    @media (max-width: 450px) {
+      top: 82px;
+      right: -160px;
+    }
+  }
+}
+
+.product.product--rotate-arrow legend {
+  &::after {
+    transform: rotate(180deg);
   }
 }
 
@@ -28,6 +63,18 @@
 
   &:last-child {
     margin-bottom: 23px;
+
+    @media (max-width: 1169px) {
+      margin-bottom: 35px;
+    }
+
+    @media (max-width: 450px) {
+      margin-bottom: 26px;
+    }
+  }
+
+  @media (max-width: 1169px) {
+    margin: 0 0 15px;
   }
 }
 
@@ -36,4 +83,9 @@
   line-height: 18px;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 1169px) {
+    font-size: 16px;
+    line-height: 21px;
+  }
 }

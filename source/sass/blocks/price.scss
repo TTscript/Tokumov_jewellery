@@ -2,12 +2,33 @@
   border: 0;
   margin: 0;
   padding: 0 25px;
+
+  @media (max-width: 1169px) {
+    border-bottom: 1px solid $basic-brown;
+    margin-bottom: 40px;
+    padding: 0 21px;
+  }
+
+  @media (max-width: 450px) {
+    margin-bottom: 31px;
+  }
 }
 
 .price legend {
   position: relative;
   margin: 0 0 23px;
   padding: 25px 0 0;
+
+  @media (max-width: 1169px) {
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0 0 31px;
+    padding: 36px 0 0;
+  }
+
+  @media (max-width: 450px) {
+    padding: 25px 0 0;
+  }
 
   &::after {
     content: "";
@@ -16,8 +37,27 @@
     right: -159px;
     margin-left: 10px;
     background: url("../img/decor/accordion-arrow.svg");
+    background-size: cover;
     width: 15px;
     height: 8px;
+
+    @media (max-width: 1169px) {
+      top: 41px;
+      right: -317px;
+      width: 23px;
+      height: 12px;
+    }
+
+    @media (max-width: 450px) {
+      top: 29px;
+      right: -187px;
+    }
+  }
+}
+
+.price.price--rotate-arrow legend {
+  &::after {
+    transform: rotate(180deg);
   }
 }
 
@@ -26,6 +66,11 @@
   line-height: 18px;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 1169px) {
+    font-size: 16px;
+    line-height: 21px;
+  }
 }
 
 .price__scrollbar {
@@ -41,6 +86,14 @@
     border-bottom: 1px solid $basic-beige;
     min-width: 100%;
   }
+
+  @media (max-width: 1169px) {
+    margin: 0 0 18px;
+  }
+
+  @media (max-width: 450px) {
+    margin: 0 0 24px;
+  }
 }
 
 .price__scrollbar-active-line {
@@ -55,6 +108,15 @@
     left: 59px;
     border-bottom: 1px solid $basic-brown;
     min-width: 90px;
+
+    @media (max-width: 1169px) {
+      min-width: 178px;
+    }
+
+    @media (max-width: 450px) {
+      left: 46px;
+      min-width: 135px;
+    }
   }
 }
 
@@ -72,6 +134,17 @@
     height: 15px;
     border-radius: 50%;
     background-color: $basic-brown;
+
+    @media (max-width: 1169px) {
+      top: -8px;
+      left: 54px;
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 450px) {
+      left: 28px;
+    }
   }
 
   &::after {
@@ -83,6 +156,17 @@
     height: 15px;
     border-radius: 50%;
     background-color: $basic-brown;
+
+    @media (max-width: 1169px) {
+      width: 18px;
+      height: 18px;
+      top: -8px;
+      left: 230px;
+    }
+
+    @media (max-width: 450px) {
+      left: 167px;
+    }
   }
 }
 
@@ -91,9 +175,30 @@
   justify-content: center;
   align-items: center;
   column-gap: 72px;
+
+  @media (max-width: 1169px) {
+    justify-content: flex-start;
+    padding-left: 37px;
+    column-gap: 137px;
+  }
+
+  @media (max-width: 450px) {
+    padding: 16px 0 0 11px;
+    column-gap: 101px;
+  }
 }
 
 .price__tags p {
   font-size: 14px;
   line-height: 18px;
+
+  @media (max-width: 1169px) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  @media (max-width: 450px) {
+    margin: 0;
+    padding: 0;
+  }
 }

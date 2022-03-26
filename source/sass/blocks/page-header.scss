@@ -131,7 +131,12 @@
 
   &:first-child {
     margin-right: 35px;
+    @media (max-width: $max-tablet) {
+      margin: 0;
+    }
+  }
 
+  &:last-child {
     @media (max-width: $max-tablet) {
       display: none;
     }
@@ -151,7 +156,7 @@
   }
 
 
-  &:last-child {
+  &:first-child {
     @media (max-width: $max-tablet) {
       display: block;
       font-size: 0;

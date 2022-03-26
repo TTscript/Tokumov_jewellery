@@ -10,6 +10,11 @@
     border: 1px solid $basic-brown;
     margin: 0 11px 0 0;
     padding: 0;
+
+    @media (max-width: $max-tablet) {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 
@@ -23,5 +28,10 @@
     background-color: $basic-brown;
     margin: 0 11px 0 0;
     padding: 0;
+
+    @media (max-width: $max-tablet) {
+      width: 18px;
+      height: 18px;
+    }
   }
 }

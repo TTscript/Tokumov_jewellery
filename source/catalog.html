@@ -54,14 +54,14 @@
           </div>
         </div>
         <div class="page-header__logo">
-          <a>
+          <a href="index.html">
             <svg>
               <use xlink:href="img/svgsprite.svg#logo"></use>
             </svg>
           </a>
         </div>
         <div class="page-header__login-block">
-          <p><a href="#">Login</a></p>
+          <p id="login"><a href="#">Login</a></p>
           <p><a href="#">Cart 0</a></p>
         </div>
       </div>
@@ -133,7 +133,6 @@
                   <div class="price__scrollbar">
                     <div class="price__scrollbar-active-line">
                       <div class="price__toggles">
-
                       </div>
                     </div>
                      <div class="price__tags">
@@ -144,7 +143,7 @@
                 </fieldset>
               </div>
               <button type="submit">Apply</button>
-              <button type="button"><span>Clear All</span></button>
+              <button id="filter-button" type="button"><span>Clear All</span></button>
             </div>
           </form>
           <div class="catalog-goods">
@@ -226,7 +225,6 @@
           </div>
         </div>
       </section>
-
     </main>
     <footer class="page-footer">
       <div class="page-footer__inner">
@@ -263,36 +261,100 @@
       </div>
     </footer>
   </div>
-  <template id="popup">
-    <div class="popup">
-      <form class="popup__shape" action="#" method="post">
-        <div class="popup__close-button">
-          <div class="popup__close-button-top-line"></div>
-          <div class="popup__close-button-bottom-line"></div>
+  <template id="popup-login">
+    <div class="popup-login">
+      <div class="popup-login__inner">
+        <div class="popup-login__background">
+          <div class="popup-login__close-button"></div>
         </div>
-        <h3>Закажите звонок</h3>
-        <fieldset class="popup__shape-inner">
-          <legend>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</legend>
-          <div class="popup__shape-inner-inputs-wrapper">
-            <div class="popup__shape-inner-enter-name">
-              <label class="visually-hidden" for="name-popup-input">Имя</label>
-              <input id="name-popup-input" name="popup-name" type="text" placeholder="Имя">
-            </div>
-            <div class="popup__shape-inner-enter-phone">
-              <label class="visually-hidden" for="tel-popup-input">Телефон</label>
-              <input id="tel-popup-input" name="popup-phone" type="tel" placeholder="Телефон">
-            </div>
+        <form class="popup-login__shape" action="#" method="post">
+          <div class="popup-login__shape-inner">
+            <fieldset class="popup-login__main-shape">
+              <legend>Log In</legend>
+              <div class="popup-login__enter-mail">
+                <input type="mail" placeholder="Your E-mail">
+              </div>
+              <div class="popup-login__enter-password">
+                <input type="text" placeholder="Password">
+              </div>
+              <div class="popup-login__forgot-password">
+                <p><a href="#">Forgot your password?</a></p>
+              </div>
+              <button type="submit">Log In</button>
+              <div class="popup-login__sign-up">
+                <p>Don’t have an account? <a href="#">Sign up</a></p>
+              </div>
+
+            </fieldset>
           </div>
-          <div class="popup__shape-inner-enter-question">
-            <label class="visually-hidden" for="popup-textarea">Поле для вопроса</label>
-            <textarea id="popup-textarea" cols="30" rows="7" placeholder="Ваш вопрос"></textarea>
+        </form>
+      </div>
+    </div>
+  </template>
+  <template id="popup-filter">
+    <div class="popup-filter">
+      <form class="popup-filter__shape" action="#" method="post">
+        <div class="popup-filter__shape-inner">
+          <div class="popup-filter__filter">
+            <div id="filter-close-button" class="popup-filter__close-button"></div>
+            <fieldset class="product">
+              <legend>Product</legend>
+              <div class="product__necklaces checkbox">
+                <input class="visually-hidden" type="checkbox" name="necklaces-popup" id="necklaces-popup" checked>
+                <label for="necklaces-popup">Necklaces</label>
+              </div>
+              <div class="product__chokers checkbox">
+                <input class="visually-hidden" type="checkbox" name="chokers-popup" id="chokers-popup">
+                <label for="chokers-popup">Chokers</label>
+              </div>
+              <div class="product__rings checkbox">
+                <input class="visually-hidden" type="checkbox" name="rings-popup" id="rings-popup" checked>
+                <label for="rings-popup">Rings</label>
+              </div>
+              <div class="product__earrings checkbox">
+                <input class="visually-hidden" type="checkbox" name="earrings-popup" id="earrings-popup" checked>
+                <label for="earrings-popup">Earrings</label>
+              </div>
+            </fieldset>
+            <fieldset class="material">
+              <legend>Material</legend>
+              <div class="material__gold checkbox">
+                <input class="visually-hidden" type="checkbox" name="gold-popup" id="gold-popup">
+                <label for="gold-popup">Gold</label>
+              </div>
+              <div class="material__silver checkbox">
+                <input class="visually-hidden" type="checkbox" name="silver-popup" id="silver-popup">
+                <label for="silver-popup">Silver</label>
+              </div>
+            </fieldset>
+            <fieldset class="collection">
+              <legend>Collection</legend>
+              <div class="collection__pink-flamingo checkbox">
+                <input class="visually-hidden" type="checkbox" name="pink-flamingo-popup" id="pink-flamingo-popup">
+                <label for="pink-flamingo-popup">Pink Flamingo</label>
+              </div>
+              <div class="collection__dreams checkbox">
+                <input class="visually-hidden" type="checkbox" name="dreams-popup" id="dreams-popup">
+                <label for="dreams-popup">Dreams</label>
+              </div>
+            </fieldset>
+            <fieldset class="price">
+              <legend>Price</legend>
+              <div class="price__scrollbar">
+                <div class="price__scrollbar-active-line">
+                  <div class="price__toggles">
+                  </div>
+                </div>
+                 <div class="price__tags">
+                   <p>$ 55</p>
+                   <p>$ 155</p>
+                 </div>
+              </div>
+            </fieldset>
+            <button id="popup-filter-submit" type="submit">Apply</button>
+            <button id="popup-filter-reset" type="button">Clear All</button>
           </div>
-          <button type="submit" aria-label="Кнопка отправить форму">Отправить</button>
-          <div class="popup__shape-inner-checkbox">
-            <input class="visually-hidden" id="popup-checkbox" type="checkbox" name="popup" checked>
-            <label for="popup-checkbox">Я согласен на обработку персональных данных</label>
-          </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   </template>
