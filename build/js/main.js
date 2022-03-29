@@ -1,7 +1,7 @@
 /* eslint-disable no-inner-declarations */
 
-if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
-// if (window.location.pathname === '/Tokumov_jewellery/build/index.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
+// if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
+if (window.location.pathname === '/Tokumov_jewellery/build/index.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
   ///////////////////////////////////////////////////////////////////SLIDER
   const goods = document.querySelector('.goods__inner');
   const paginationDesktopNumbers = document.querySelectorAll('.pagination__desktop button');
@@ -210,7 +210,7 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
   const size = gallery.childElementCount;
   let currentSlideWasChanged = false;
   let startX = 0;
-  const galleryWidth = gallery.getBoundingClientRect().width;
+  // const galleryWidth = gallery.getBoundingClientRect().width;
   let currentSlide = 0;
   let clickX = 0;
   let dragX = 0;
