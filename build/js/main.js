@@ -1,4 +1,7 @@
 /* eslint-disable no-inner-declarations */
+
+import './slider.js';
+
 //////////////////////////////////////////////////LOGIN
 
 const loginPopup = document.querySelector('#popup-login').content.querySelector('.popup-login');

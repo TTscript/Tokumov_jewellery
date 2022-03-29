@@ -1,6 +1,7 @@
 .new-entries {
   margin: 0 0 115px;
-  padding: 0 30px;
+  // padding: 0 30px;
+  padding: 0 10px;
 
   @media (max-width: $max-tablet) {
     margin: 0 0 65px;
@@ -8,16 +9,18 @@
   }
 
   @media (max-width: $max-mobile) {
-    margin: 0 0 55px;
+    margin: 0 0 40px;
+    padding: 0 16px;
   }
 }
 
 .new-entries__inner {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  // position: relative;
+  // display: flex;
+  // align-items: center;
+  // flex-direction: column;
   max-width: 1170px;
+  overflow: hidden;
   margin: 0 auto;
   padding: 0;
 
@@ -27,14 +30,25 @@
 }
 
 .new-entries__header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.new-entries__header > h3 {
+  @include cormorantgaramond-bold();
+  color: $basic-dark;
+  font-size: 34px;
+  line-height: 44px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: $max-mobile) {
+    margin-bottom: 19px;
+  }
 }
 
 .new-entries__header p {
-  border-bottom: 1px solid $basic-brown;
   text-align: center;
   transition: 0.2s;
   margin: 0 0 60px;
@@ -60,6 +74,7 @@
 
 .new-entries__header a {
   color: $basic-dark;
+  border-bottom: 1px solid $basic-brown;
 
   &:active {
     color: $basic-brown;
@@ -68,42 +83,39 @@
 
 .new-entries__buttons-block {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .new-entries__left-arrow {
-  // position: absolute;
-  // top: 0;
-  // left: 0;
   position: relative;
+  top: -20px;
   cursor: pointer;
   border: 0;
   background-color: transparent;
   transition: 0.2s;
   margin: 0;
-  padding: 15px 20px 15px;
+  padding: 11px 20px;
 
   &::before {
     content: "";
     position: absolute;
-    top: 6px;
+    top: 8px;
     left: 0;
     background: url("../img/decor/arrow.svg") no-repeat;
     width: 29px;
     height: 10px;
     transition: 0.2s;
+
+    @media (max-width: $max-tablet) {
+      background-size: 36px 33px;
+      width: 36px;
+      height: 33px;
+    }
   }
 
     &:hover {
       transform: scale(1.3) translate(4px);
-    }
-
-    @media (max-width: $max-tablet) {
-      width: 40px;
-      height: 30px;
-      background-size: 36px 33px;
     }
 
     @media (max-width: $max-mobile) {
@@ -112,20 +124,18 @@
 }
 
 .new-entries__right-arrow {
-  // position: absolute;
-  // top: 0;
-  // right: 0;
   position: relative;
+  top: -20px;
   cursor: pointer;
   border: 0;
   background-color: transparent;
   margin: 0;
-  padding: 15px 20px 15px;
+  padding: 11px 20px;
 
   &::after {
     content: "";
     position: absolute;
-    top: -6px;
+    top: 9px;
     right: 0;
     background: url("../img/decor/arrow.svg") no-repeat;
     width: 29px;
@@ -135,7 +145,12 @@
     cursor: pointer;
     transition: 0.2s;
     margin: 0;
-    padding: 15px;
+
+    @media (max-width: $max-tablet) {
+      background-size: 36px 33px;
+      width: 36px;
+      height: 33px;
+    }
   }
 
 
@@ -144,28 +159,14 @@
       transition: 0.2s;
     }
 
-    @media (max-width: $max-tablet) {
-      width: 40px;
-      height: 30px;
-      background-size: 36px 33px;
-    }
-
     @media (max-width: $max-mobile) {
       display: none;
     }
 }
 
-.new-entries__inner h3 {
-  @include cormorantgaramond-bold();
-  color: $basic-dark;
-  font-size: 34px;
-  line-height: 44px;
-  text-align: center;
-  margin: 0 0 25px;
-  padding: 0;
-
-  @media (max-width: $max-tablet) {
-    margin: 0 0 20px;
-  }
+.new-entries__goods-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-

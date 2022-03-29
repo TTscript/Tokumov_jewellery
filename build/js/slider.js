@@ -1,15 +1,20 @@
 
 //SLIDER
 const goods = document.querySelector('.goods__inner');
-const paginationBlock = document.querySelector('.pagination__desktop');
 const paginationDesktopNumbers = document.querySelectorAll('.pagination__desktop button');
 const paginationTabletNumbers = document.querySelectorAll('.pagination__tablet button');
 const leftArrow = document.querySelector('.new-entries__left-arrow');
 const rightArrow = document.querySelector('.new-entries__right-arrow');
-const goodsWrapper = document.querySelector('.new-entries__inner');
+// const goodsWrapper = document.querySelector('.new-entries__inner');
+const goodsWrapper = document.querySelector('.new-entries');
+
 const images = goods.querySelectorAll('img');
 const mediaQueryDesktop = window.matchMedia('(min-width: 1024px)');
 const mediaQueryTablet = window.matchMedia('(max-width: 1023px)');
+
+console.log(goods);
+console.log(images);
+console.log(goodsWrapper.offsetWidth);
 
 //PAGINATION COLORS
 
@@ -88,18 +93,20 @@ let width;
 
 window.addEventListener('resize', () => {
   if (mediaQueryDesktop.matches) {
-    moveArrowsDesktopSlider(paginationDesktopNumbers, 1200);
-    pagination(desktopFigures, 'desktop');
-    swipeFigures(paginationDesktopNumbers);
+    // moveArrowsDesktopSlider(paginationDesktopNumbers, 1200);
+    // pagination(desktopFigures, 'desktop');
+    // swipeFigures(paginationDesktopNumbers);
+    console.log('resizing...');
 
     width = goodsWrapper.offsetWidth;
     goods.style.width = `${width * images.length}px`;
     images.forEach((item) => {
-      item.style.width = `${width / 4.34}px`;
+      item.style.width = `${width / 4.8}px`;
       item.style.height = 'auto';
     });
   } else if (mediaQueryTablet.matches) {
     pagination(tabletFigures, 'tablet');
+    console.log('resizing...');
 
     width = goodsWrapper.offsetWidth;
     goods.style.width = `${width * images.length}px`;

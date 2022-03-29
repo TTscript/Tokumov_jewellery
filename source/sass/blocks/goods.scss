@@ -3,8 +3,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  transition: 1s;
+  // transition: 1s;
   overflow: hidden;
+  // max-width: calc(100vw - 50px);
   margin: 0 auto 52px;
   padding: 0;
 
@@ -13,7 +14,7 @@
   }
 
   @media (max-width: $max-mobile) {
-    margin: 0 auto 33px;
+    margin: 0 auto 16px;
   }
 }
 
@@ -28,7 +29,6 @@
 
 .goods__inner {
   display: flex;
-  transition: 0.4s;
 }
 
 .goods__card {
@@ -42,8 +42,7 @@
 }
 
 .goods__card img {
-  transition: 0.2s;
-  margin: 0 0 15px;
+  margin: 0 0 19px;
   padding: 0;
 
   &:hover {
@@ -58,12 +57,13 @@
   @media (max-width: $max-tablet) {
     width: 324px;
     height: 340px;
+    margin: 0 0 15px;
   }
 
   @media (max-width: $max-mobile) {
     width: 130px;
     height: 136px;
-    margin: 0 0 11px;
+    margin: 0 0 14px;
   }
 }
 
