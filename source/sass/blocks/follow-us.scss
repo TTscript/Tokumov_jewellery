@@ -81,7 +81,7 @@
   padding: 0;
 }
 
-.follow-us__gallery img[src*="1"] {
+.follow-us__gallery img[src*="picture-1"] {
   grid-area: one;
 
   @media (max-width: $max-tablet) {
