@@ -190,7 +190,9 @@ burgerButton.addEventListener('click', () => {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 window.onload = function () {
-  if (window.location.pathname === '/index.html') {
+  // if (window.location.pathname === '/index.html') {
+  if (window.location.pathname === '/Tokumov_jewellery/build/index.html') {
+
     console.log(window.location.pathname);
 
     ///////////////////////////////////////////////////ACORDION
@@ -214,7 +216,9 @@ window.onload = function () {
     ///////////////////////////////////////////////////ACORDION
 
 
-  } else if (window.location.pathname === '/catalog.html') {
+  // } else if (window.location.pathname === '/catalog.html') {
+  } else if (window.location.pathname === '/Tokumov_jewellery/build/catalog.html') {
+
     console.log(window.location.pathname);
 
     ////////////////////////////////////////FILTER
