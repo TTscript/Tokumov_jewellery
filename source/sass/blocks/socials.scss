@@ -32,22 +32,13 @@
   margin: 0;
   padding: 10px 10px 10px 20px;
 
-  &:hover {
-    color: $facebook;
-    transition: 0.2s;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
-
   &::before {
     content: "";
     position: absolute;
     top: 13px;
     left: -8px;
-    -webkit-mask: url("../img/decor/facebook.svg") no-repeat 50% 50%;
-    mask: url("../img/decor/facebook.svg") no-repeat 50% 50%;
+    -webkit-mask: url("../img/decor/facebook.svg");
+    mask: url("../img/decor/facebook.svg");
     -webkit-mask-size: cover;
     mask-size: cover;
     background-color: $basic-white;
@@ -93,7 +84,6 @@
     background-clip: text;
     color: transparent;
     transition: 0.2s;
-
   }
 
   &:active {
@@ -105,8 +95,8 @@
     position: absolute;
     top: 13px;
     left: -11px;
-    -webkit-mask: url("../img/decor/instagram.svg") no-repeat 50% 50%;
-    mask: url("../img/decor/instagram.svg") no-repeat 50% 50%;
+    -webkit-mask: url("../img/decor/instagram.svg");
+    mask: url("../img/decor/instagram.svg");
     -webkit-mask-size: cover;
     mask-size: cover;
     background-color: $basic-white;
@@ -129,19 +119,6 @@
   }
 }
 
-.socials__instagram a:hover {
-  &::before {
-    background: $instagram;
-    transition: 0.2s;
-  }
-}
-
-.socials__instagram a:active {
-  &::before {
-    opacity: 0.6;
-  }
-}
-
 .socials__pinterest a {
   position: relative;
   margin: 0;
@@ -161,8 +138,8 @@
     position: absolute;
     top: 13px;
     left: -11px;
-    -webkit-mask: url("../img/decor/pinterest.svg") no-repeat 50% 50%;
-    mask: url("../img/decor/pinterest.svg") no-repeat 50% 50%;
+    -webkit-mask: url("../img/decor/pinterest.svg");
+    mask: url("../img/decor/pinterest.svg");
     -webkit-mask-size: cover;
     mask-size: cover;
     background-color: $basic-white;
@@ -185,20 +162,6 @@
   }
 }
 
-.socials__pinterest a:hover {
-  &::before {
-    background-color: $pinterest;
-    transition: 0.2s;
-  }
-}
-
-.socials__pinterest a:active {
-  &::before {
-    opacity: 0.6;
-  }
-}
-
-
 .socials__twitter a {
   position: relative;
   margin: 0;
@@ -218,8 +181,8 @@
     position: absolute;
     top: 13px;
     left: -11px;
-    -webkit-mask: url("../img/decor/twitter.svg") no-repeat 50% 50%;
-    mask: url("../img/decor/twitter.svg") no-repeat 50% 50%;
+    -webkit-mask: url("../img/decor/twitter.svg");
+    mask: url("../img/decor/twitter.svg");
     -webkit-mask-size: cover;
     mask-size: cover;
     background-color: $basic-white;
@@ -240,18 +203,5 @@
 
   @media (max-width: 600px) {
     font-size: 0;
-  }
-}
-
-.socials__twitter a:hover {
-  &::before {
-    background-color: $twitter;
-    transition: 0.2s;
-  }
-}
-
-.socials__twitter a:active {
-  &::before {
-    opacity: 0.6;
   }
 }

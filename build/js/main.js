@@ -1,6 +1,116 @@
 /* eslint-disable no-inner-declarations */
 
-// import './slider.js';
+import './slider.js';
+// import './swiper.js';
+// if (window.location.pathname === '/index.html') {
+if (window.location.pathname === '/Tokumov_jewellery/build/index.html') {
+  ///////////////////////////////////////////////////ACORDION
+
+  const askedQuestion = Array.from(document.querySelectorAll('.asked-questions__block'));
+
+  askedQuestion.forEach((item) => item.querySelector('p').classList.add('asked-questions__block--disappear'));
+
+  askedQuestion.forEach((item) => item.addEventListener('click', () => {
+    item.querySelector('p').classList.toggle('asked-questions__block--appear');
+    item.classList.toggle('asked-questions__block--rotate-arrow');
+  }));
+
+  askedQuestion.forEach((item) => item.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      item.querySelector('p').classList.toggle('asked-questions__block--appear');
+      item.classList.toggle('asked-questions__block--rotate-arrow');
+    }
+  }));
+
+  ///////////////////////////////////////////////////ACORDION
+
+} else if (window.location.pathname === '/Tokumov_jewellery/build/') {
+// } else if (window.location.pathname === '/') {
+  ///////////////////////////////////////////////////ACORDION
+
+  const askedQuestion = Array.from(document.querySelectorAll('.asked-questions__block'));
+
+  askedQuestion.forEach((item) => item.querySelector('p').classList.add('asked-questions__block--disappear'));
+
+  askedQuestion.forEach((item) => item.addEventListener('click', () => {
+    item.querySelector('p').classList.toggle('asked-questions__block--appear');
+    item.classList.toggle('asked-questions__block--rotate-arrow');
+  }));
+
+  askedQuestion.forEach((item) => item.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      item.querySelector('p').classList.toggle('asked-questions__block--appear');
+      item.classList.toggle('asked-questions__block--rotate-arrow');
+    }
+  }));
+
+  ///////////////////////////////////////////////////ACORDION
+
+// } else if (window.location.pathname === '/catalog.html') {
+} else if (window.location.pathname === '/Tokumov_jewellery/build/catalog.html') {
+
+  ////////////////////////////////////////FILTER
+  const filter = document.querySelector('.filter__inner');
+  const popupCloseButton = document.querySelector('#filter-close-button');
+  const filterProduct = filter.querySelector('.product');
+  const productButton = filterProduct.querySelector('#product-button');
+  const filterProductItems = filterProduct.querySelectorAll('div');
+  const filterMaterial = filter.querySelector('.material');
+  const materialButton = filterMaterial.querySelector('#material-button');
+  const filterMaterialItems = filterMaterial.querySelectorAll('div');
+  const filterCollection = filter.querySelector('.collection');
+  const collectionButton = filterCollection.querySelector('#collection-button');
+  const filterCollectionItems = filterCollection.querySelectorAll('div');
+  const filterPrice = filter.querySelector('.price');
+  const priceButton = filterPrice.querySelector('#price-button');
+  const filterPriceItem = filterPrice.querySelector('div');
+
+  hideFilterItems(filterMaterialItems);
+  hideFilterItems(filterCollectionItems);
+
+  productButton.addEventListener('click', () => {
+    filterProduct.classList.toggle('product--rotate-arrow');
+    filterProductItems.forEach((item) => {
+      item.classList.toggle('filter__inner--display-none');
+    });
+  });
+
+  materialButton.addEventListener('click', () => {
+    filterMaterial.classList.toggle('material--rotate-arrow');
+    filterMaterialItems.forEach((item) => {
+      item.classList.toggle('filter--display-none');
+    });
+  });
+
+  collectionButton.addEventListener('click', () => {
+    filterCollection.classList.toggle('collection--rotate-arrow');
+    filterCollectionItems.forEach((item) => {
+      item.classList.toggle('filter--display-none');
+    });
+  });
+
+  priceButton.addEventListener('click', () => {
+    filterPrice.classList.toggle('price--rotate-arrow');
+    filterPriceItem.classList.toggle('filter--display-none');
+  });
+
+  popupCloseButton.addEventListener('click', closeFilter);
+
+  function closeFilter() {
+    document.querySelector('.catalog__filter-wrapper').classList.add('catalog__filter-wrapper-remove');
+  }
+  ////////////////////////////////////////FILTER
+
+
+  ////////////////////////////////////////FILTER
+
+  function hideFilterItems(items) {
+    items.forEach((item) => {
+      item.classList.add('filter--display-none');
+    });
+  }
+  ////////////////////////////////////////FILTER
+}
 
 //////////////////////////////////////////////////LOGIN
 
@@ -187,100 +297,3 @@ burgerButton.addEventListener('click', () => {
 });
 
 //////////////////////////////////////// BURGER MENU
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-window.onload = function () {
-  // if (window.location.pathname === '/index.html') {
-  if (window.location.pathname === '/Tokumov_jewellery/build/index.html') {
-
-    console.log(window.location.pathname);
-
-    ///////////////////////////////////////////////////ACORDION
-
-    const askedQuestion = Array.from(document.querySelectorAll('.asked-questions__block'));
-
-    askedQuestion.forEach((item) => item.querySelector('p').classList.add('asked-questions__block--disappear'));
-
-    askedQuestion.forEach((item) => item.addEventListener('click', () => {
-      item.querySelector('p').classList.toggle('asked-questions__block--appear');
-      item.classList.toggle('asked-questions__block--rotate-arrow');
-    }));
-
-    askedQuestion.forEach((item) => item.addEventListener('keydown', (e) => {
-      if (e.key === ' ' || e.key === 'Enter') {
-        item.querySelector('p').classList.toggle('asked-questions__block--appear');
-        item.classList.toggle('asked-questions__block--rotate-arrow');
-      }
-    }));
-
-    ///////////////////////////////////////////////////ACORDION
-
-
-  // } else if (window.location.pathname === '/catalog.html') {
-  } else if (window.location.pathname === '/Tokumov_jewellery/build/catalog.html') {
-
-    console.log(window.location.pathname);
-
-    ////////////////////////////////////////FILTER
-    const filter = document.querySelector('.filter__inner');
-    const popupCloseButton = document.querySelector('#filter-close-button');
-    const filterProduct = filter.querySelector('.product');
-    const productButton = filterProduct.querySelector('#product-button');
-    const filterProductItems = filterProduct.querySelectorAll('div');
-    const filterMaterial = filter.querySelector('.material');
-    const materialButton = filterMaterial.querySelector('#material-button');
-    const filterMaterialItems = filterMaterial.querySelectorAll('div');
-    const filterCollection = filter.querySelector('.collection');
-    const collectionButton = filterCollection.querySelector('#collection-button');
-    const filterCollectionItems = filterCollection.querySelectorAll('div');
-    const filterPrice = filter.querySelector('.price');
-    const priceButton = filterPrice.querySelector('#price-button');
-    const filterPriceItem = filterPrice.querySelector('div');
-
-    hideFilterItems(filterMaterialItems);
-    hideFilterItems(filterCollectionItems);
-
-    productButton.addEventListener('click', () => {
-      filterProduct.classList.toggle('product--rotate-arrow');
-      filterProductItems.forEach((item) => {
-        item.classList.toggle('filter__inner--display-none');
-      });
-    });
-
-    materialButton.addEventListener('click', () => {
-      filterMaterial.classList.toggle('material--rotate-arrow');
-      filterMaterialItems.forEach((item) => {
-        item.classList.toggle('filter--display-none');
-      });
-    });
-
-    collectionButton.addEventListener('click', () => {
-      filterCollection.classList.toggle('collection--rotate-arrow');
-      filterCollectionItems.forEach((item) => {
-        item.classList.toggle('filter--display-none');
-      });
-    });
-
-    priceButton.addEventListener('click', () => {
-      filterPrice.classList.toggle('price--rotate-arrow');
-      filterPriceItem.classList.toggle('filter--display-none');
-    });
-
-    popupCloseButton.addEventListener('click', closeFilter);
-
-    function closeFilter() {
-      document.querySelector('.catalog__filter-wrapper').classList.add('catalog__filter-wrapper-remove');
-    }
-    ////////////////////////////////////////FILTER
-
-
-  ////////////////////////////////////////FILTER
-
-  function hideFilterItems(items) {
-    items.forEach((item) => {
-      item.classList.add('filter--display-none');
-    });
-  }
-  ////////////////////////////////////////FILTER
-  }
-};

@@ -9,10 +9,20 @@
   margin: 0 0 79px;
   padding: 0;
 
+  @media (min-resolution: 2dppx) {
+    background: url("../img/desktop/catalog/main-block@2x.png") no-repeat;
+    background-size: cover;
+  }
+
   @media (max-width: $max-tablet) {
     background: url("../img/tablet/catalog/main-block.png") no-repeat;
     background-size: cover;
     margin: 0 0 26px;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../img/tablet/catalog/main-block@2x.png") no-repeat;
+      background-size: cover;
+    }
   }
 
   @media (max-width: $max-mobile) {
@@ -21,6 +31,12 @@
     text-align: center;
     margin: 0 0 15px;
     padding: 0 15px;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../img/mobile/catalog/main-block@2x.png") no-repeat;
+      background-size: cover;
+      text-align: center;
+    }
   }
 }
 

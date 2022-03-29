@@ -32,8 +32,8 @@
     top: 28px;
     right: 23px;
     margin-left: 10px;
-    -webkit-mask: url("../img/decor/accordion-arrow.svg") no-repeat 50% 50%;
-    mask: url("../img/decor/accordion-arrow.svg") no-repeat 50% 50%;
+    -webkit-mask: url("../img/decor/accordion-arrow.svg");
+    mask: url("../img/decor/accordion-arrow.svg");
     -webkit-mask-size: cover;
     mask-size: cover;
     background-color: $basic-brown;
@@ -60,7 +60,7 @@
   background-color: $basic-brown;
   color: $basic-white;
 
-  &:after {
+  &::after {
     background-color: $basic-white;
   }
 }

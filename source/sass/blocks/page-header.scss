@@ -75,7 +75,7 @@
   padding: 0;
 
   @media (max-width: $max-tablet) {
-    transform: translate(-5px,3px);
+    transform: translate(-5px, 3px);
   }
 }
 
@@ -139,6 +139,7 @@
 
   &:first-child {
     margin-right: 35px;
+
     @media (max-width: $max-tablet) {
       margin: 0;
     }
@@ -173,8 +174,8 @@
       &::before {
         content: "";
         display: block;
-        -webkit-mask: url("../img/decor/bag.svg") no-repeat 50% 50%;
-        mask: url("../img/decor/bag.svg") no-repeat 50% 50%;
+        -webkit-mask: url("../img/decor/bag.svg");
+        mask: url("../img/decor/bag.svg");
         -webkit-mask-size: cover;
         mask-size: cover;
         background-size: 18px 16px;

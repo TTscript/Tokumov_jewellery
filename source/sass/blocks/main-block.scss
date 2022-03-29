@@ -12,16 +12,31 @@
   margin: 0 0 119px;
   padding: 0;
 
+  @media (min-resolution: 2dppx) {
+    background: url("../img/desktop/main/background/main-block@2x.png") no-repeat;
+    background-size: cover;
+  }
+
   @media (max-width: $max-tablet) {
     background: url("../img/tablet/main/background/main-block.png") no-repeat;
     background-size: cover;
     margin: 0 0 71px;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../img/tablet/main/background/main-block@2x.png") no-repeat;
+      background-size: cover;
+    }
   }
 
   @media (max-width: $max-mobile) {
     background: url("../img/mobile/main/background/main-block.png") no-repeat;
     background-size: cover;
     margin: 0 0 62px;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../img/mobile/main/background/main-block.png") no-repeat;
+      background-size: cover;
+    }
   }
 }
 
@@ -33,7 +48,7 @@
   padding: 0;
 
   @media (max-width: $max-tablet) {
-    padding: 5px 16px 0 0px;
+    padding: 5px 16px 0 0;
   }
 
   @media (max-width: $max-mobile) {
@@ -51,7 +66,7 @@
   padding: 0;
 
   @media (max-width: $max-tablet) {
-    padding: 0px 16px 0 0px;
+    padding: 0 16px 0 0;
   }
 
   @media (max-width: $max-mobile) {

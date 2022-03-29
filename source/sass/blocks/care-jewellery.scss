@@ -9,7 +9,7 @@
     margin: 0 0 50px;
   }
 
-  @media (max-width: $max-mobile) {
+  @media (max-width: 400px) {
     flex-direction: column;
     margin: 0 0 40px;
   }
@@ -27,7 +27,11 @@
     min-height: 300px;
   }
 
-  @media (max-width: $max-mobile) {
+  @media (max-width: 738px) {
+    min-width: calc(100vw - 400px);
+  }
+
+  @media (max-width: 400px) {
     background: url("../img/mobile/main/blog/care-jewellery.jpg") no-repeat;
     min-width: 290px;
     min-height: 256px;
@@ -50,7 +54,7 @@
     min-height: 300px;
   }
 
-  @media (max-width: $max-mobile) {
+  @media (max-width: 400px) {
     min-width: 290px;
     min-height: 256px;
     padding: 44px 60px 20px;

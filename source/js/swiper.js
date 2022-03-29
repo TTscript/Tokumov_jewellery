@@ -1,11 +1,10 @@
 const gallery = document.querySelector('.goods');
 const galleryLine = gallery.querySelector('.goods__inner');
-const galleryItems = Array.from(galleryLine.querySelectorAll('.goods__inner div'));
 
-let size = gallery.childElementCount;
+const size = gallery.childElementCount;
 let currentSlideWasChanged = false;
 let startX = 0;
-let width = gallery.getBoundingClientRect().width;
+const width = gallery.getBoundingClientRect().width;
 let currentSlide = 0;
 let clickX = 0;
 let dragX = 0;
@@ -15,7 +14,6 @@ galleryLine.addEventListener('pointerdown', startDrag);
 window.addEventListener('pointerup', stopDrag);
 
 function startDrag(evt) {
-  console.log(evt.pageX);
   clickX = evt.pageX;
   startX = x;
   window.addEventListener('pointermove', dragging);

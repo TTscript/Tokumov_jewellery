@@ -3,9 +3,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  // transition: 1s;
   overflow: hidden;
-  // max-width: calc(100vw - 50px);
   margin: 0 auto 52px;
   padding: 0;
 
@@ -75,18 +73,6 @@
   @media (max-width: $max-mobile) {
     max-width: 130px;
     text-indent: 0;
-  }
-}
-
-.goods__gold-chain {
-  @media (max-width: $max-tablet) {
-    // display: none;
-  }
-}
-
-.goods__earrings {
-  @media (max-width: $max-tablet) {
-    // display: none;
   }
 }
 

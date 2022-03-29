@@ -8,6 +8,14 @@
   margin: 0;
   padding: 0;
 
+  @media (min-resolution: 2dppx) {
+    background: url("../img/desktop/main/blog/trends@2x.jpg") no-repeat;
+  }
+
+  @media (max-width: $max-desktop) {
+    min-width: calc(100vw - 800px);
+  }
+
   @media (max-width: $max-tablet) {
     min-width: unset;
     min-height: unset;
@@ -15,7 +23,7 @@
     max-width: 639px;
   }
 
-  @media (max-width: $max-mobile) {
+  @media (max-width: 400px) {
     flex-direction: column;
   }
 }
@@ -27,12 +35,24 @@
     min-height: 300px;
     margin: 0;
     padding: 0;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../img/tablet/main/blog/trends@2x.jpg") no-repeat;
+    }
   }
 
-  @media (max-width: $max-mobile) {
+  @media (max-width: 738px) {
+    min-width: calc(100vw - 400px);
+  }
+
+  @media (max-width: 400px) {
     background: url("../img/mobile/main/blog/trends.jpg") no-repeat;
     min-width: 290px;
     min-height: 256px;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../img/mobile/main/blog/trends@2x.jpg") no-repeat;
+    }
   }
 }
 
@@ -54,7 +74,7 @@
     padding: 83px 60px 20px;
   }
 
-  @media (max-width: $max-mobile) {
+  @media (max-width: 400px) {
     min-width: 290px;
     min-height: 256px;
     padding: 62px 60px 20px;

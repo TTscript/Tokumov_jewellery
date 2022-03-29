@@ -3,14 +3,12 @@
 @import "global/variables.scss";
 @import "global/global.scss";
 @import "global/normalize.scss";
-
 @import "blocks/center-container.scss";
 @import "blocks/page-body.scss";
 @import "blocks/page-header.scss";
 @import "blocks/navigation.scss";
 @import "blocks/burger-closed.scss";
 @import "blocks/burger-open.scss";
-
 @import "blocks/page-main.scss";
 @import "blocks/main-block.scss";
 @import "blocks/new-entries.scss";
@@ -20,19 +18,13 @@
 @import "blocks/care-jewellery.scss";
 @import "blocks/crystals.scss";
 @import "blocks/trends.scss";
-
 @import "blocks/asked-questions.scss";
-
 @import "blocks/follow-us.scss";
-
 @import "blocks/page-footer.scss";
 @import "blocks/sign-up.scss";
 @import "blocks/additional-information.scss";
 @import "blocks/about-ch.scss";
 @import "blocks/socials.scss";
-
-
-//CATALOG
 @import "blocks/catalog-background.scss";
 @import "blocks/catalog.scss";
 @import "blocks/catalog-goods.scss";
@@ -45,5 +37,4 @@
 @import "blocks/collection.scss";
 @import "blocks/price.scss";
 @import "blocks/catalog-card.scss";
-@import "blocks/popup-filter.scss";
 @import "blocks/popup-login.scss";

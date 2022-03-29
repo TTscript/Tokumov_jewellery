@@ -5,28 +5,19 @@ const paginationDesktopNumbers = document.querySelectorAll('.pagination__desktop
 const paginationTabletNumbers = document.querySelectorAll('.pagination__tablet button');
 const leftArrow = document.querySelector('.new-entries__left-arrow');
 const rightArrow = document.querySelector('.new-entries__right-arrow');
-// const goodsWrapper = document.querySelector('.new-entries__inner');
 const goodsWrapper = document.querySelector('.new-entries');
 
-const images = goods.querySelectorAll('img');
+const images = document.querySelectorAll('img');
 const mediaQueryDesktop = window.matchMedia('(min-width: 1024px)');
 const mediaQueryTablet = window.matchMedia('(max-width: 1023px)');
-
-console.log(goods);
-console.log(images);
-console.log(goodsWrapper.offsetWidth);
 
 //PAGINATION COLORS
 
 let activeNumber = false;
 const desktopFigures = Array.from(document.querySelector('.pagination__desktop').querySelectorAll('button'));
 const tabletFigures = Array.from(document.querySelector('.pagination__tablet').querySelectorAll('button'));
-let numberOne = true;
 let numberTwo = false;
 let numberThree = false;
-let numberFour = false;
-let numberFive = false;
-let numberSix = false;
 
 function pagination(figures, screen) {
   figures.forEach((elem) => {
@@ -39,47 +30,23 @@ function pagination(figures, screen) {
       elem.classList.add(`pagination__${screen}--active-number`);
       activeNumber = true;
       if (elem.textContent === '1') {
-        numberOne = true;
         numberTwo = false;
         numberThree = false;
-        numberFour = false;
-        numberFive = false;
-        numberSix = false;
       } else if (elem.textContent === '2') {
-        numberOne = false;
         numberTwo = true;
         numberThree = false;
-        numberFour = false;
-        numberFive = false;
-        numberSix = false;
       } else if (elem.textContent === '3') {
-        numberOne = false;
         numberTwo = false;
         numberThree = true;
-        numberFour = false;
-        numberFive = false;
-        numberSix = false;
       } else if (elem.textContent === '4') {
-        numberOne = false;
         numberTwo = false;
         numberThree = false;
-        numberFour = true;
-        numberFive = false;
-        numberSix = false;
       } else if (elem.textContent === '5') {
-        numberOne = false;
         numberTwo = false;
         numberThree = false;
-        numberFour = false;
-        numberFive = true;
-        numberSix = false;
       } else if (elem.textContent === '6') {
-        numberOne = false;
         numberTwo = false;
         numberThree = false;
-        numberFour = false;
-        numberFive = false;
-        numberSix = true;
       }
     });
   });
@@ -93,10 +60,9 @@ let width;
 
 window.addEventListener('resize', () => {
   if (mediaQueryDesktop.matches) {
-    // moveArrowsDesktopSlider(paginationDesktopNumbers, 1200);
-    // pagination(desktopFigures, 'desktop');
-    // swipeFigures(paginationDesktopNumbers);
-    console.log('resizing...');
+    moveArrowsDesktopSlider(paginationDesktopNumbers, 1200);
+    pagination(desktopFigures, 'desktop');
+    swipeFigures(paginationDesktopNumbers);
 
     width = goodsWrapper.offsetWidth;
     goods.style.width = `${width * images.length}px`;
@@ -106,7 +72,6 @@ window.addEventListener('resize', () => {
     });
   } else if (mediaQueryTablet.matches) {
     pagination(tabletFigures, 'tablet');
-    console.log('resizing...');
 
     width = goodsWrapper.offsetWidth;
     goods.style.width = `${width * images.length}px`;

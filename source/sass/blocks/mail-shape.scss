@@ -1,4 +1,4 @@
-.mail-shape__inner{
+.mail-shape__inner {
   display: flex;
   justify-content: flex-start;
   border: 0;
@@ -16,11 +16,10 @@
 }
 
 .mail-shape__error {
-  border: 2px solid $error-message
+  border: 2px solid $error-message;
 }
 
 .mail-shape__inner input {
-  // min-width: 76%;
   min-width: 100%;
   background-color: transparent;
   border: 0;
@@ -58,12 +57,9 @@
 
   &::after {
     content: "";
-    // position: absolute;
-    // top: 16px;
-    // right: 14px;
     display: inline-block;
-    -webkit-mask: url("../img/decor/arrow.svg") no-repeat 50% 50%;
-    mask: url("../img/decor/arrow.svg") no-repeat 50% 50%;
+    -webkit-mask: url("../img/decor/arrow.svg");
+    mask: url("../img/decor/arrow.svg");
     -webkit-mask-size: cover;
     mask-size: cover;
     background-color: $basic-white;
@@ -74,5 +70,3 @@
     margin-left: 15px;
   }
 }
-
-
