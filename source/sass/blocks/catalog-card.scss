@@ -1,8 +1,8 @@
 .catalog-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
   margin: 0;
   padding: 0;
 
@@ -15,11 +15,25 @@
   }
 }
 
+.catalog-card a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .catalog-card img {
+  transition: 0.4s;
   margin: 0 0 21px;
   padding: 0;
 
-  @media (max-width: $max-tablet) {
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+    box-shadow: 2px 2px 10px 0 $basic-dark;
+  }
+
+  @media (max-width: $intermediate-tablet) {
     width: 206px;
     height: 208px;
   }
@@ -36,6 +50,7 @@
 
 .catalog-card h3 {
   @include poppins-medium();
+  text-align: center;
   font-size: 16px;
   line-height: 21px;
   margin: 0 0 6px;

@@ -23,8 +23,13 @@
 }
 
 .burger-open__list {
+  max-width: 930px;
   margin: 0;
   padding: 0;
+}
+
+.burger-open__list--add-scroll {
+  overflow: scroll;
 }
 
 .burger-open__list a {

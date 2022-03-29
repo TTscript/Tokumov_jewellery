@@ -53,7 +53,7 @@
             </div>
           </div>
         </div>
-        <div class="page-header__logo">
+        <div class="page-header__logo catalog-logo">
           <a href="index.html">
             <svg>
               <use xlink:href="img/svgsprite.svg#logo"></use>
@@ -84,30 +84,33 @@
       <section class="catalog">
         <h2 class="visually-hidden">Catalog of goods</h2>
         <div class="catalog__inner">
-          <form class="shape" action="#" method="post">
-            <div class="shape__inner">
-              <div class="filter">
+          <div class="catalog__filter-wrapper">
+            <form class="filter" action="#" method="post">
+              <div class="filter__inner">
+                <button type="button" id="filter-close-button" class="filter__close-button"></button>
                 <fieldset class="product">
-                  <legend>Product</legend>
+                  <legend class="visually-hidden">Product</legend>
+                  <button id="product-button" type="button">Product</button>
                   <div class="product__necklaces checkbox">
-                    <input class="visually-hidden" type="checkbox" name="necklaces" id="necklaces" checked>
+                    <input type="checkbox" name="necklaces" id="necklaces" checked>
                     <label for="necklaces">Necklaces</label>
                   </div>
                   <div class="product__chokers checkbox">
-                    <input class="visually-hidden" type="checkbox" name="chokers" id="chokers">
+                    <input type="checkbox" name="chokers" id="chokers">
                     <label for="chokers">Chokers</label>
                   </div>
                   <div class="product__rings checkbox">
-                    <input class="visually-hidden" type="checkbox" name="rings" id="rings" checked>
+                    <input type="checkbox" name="rings" id="rings" checked>
                     <label for="rings">Rings</label>
                   </div>
                   <div class="product__earrings checkbox">
-                    <input class="visually-hidden" type="checkbox" name="earrings" id="earrings" checked>
+                    <input type="checkbox" name="earrings" id="earrings" checked>
                     <label for="earrings">Earrings</label>
                   </div>
                 </fieldset>
                 <fieldset class="material">
-                  <legend>Material</legend>
+                  <legend class="visually-hidden">Material</legend>
+                  <button id="material-button" type="button">Material</button>
                   <div class="material__gold checkbox">
                     <input class="visually-hidden" type="checkbox" name="gold" id="gold">
                     <label for="gold">Gold</label>
@@ -118,7 +121,8 @@
                   </div>
                 </fieldset>
                 <fieldset class="collection">
-                  <legend>Collection</legend>
+                  <legend class="visually-hidden">Collection</legend>
+                  <button id="collection-button" type="button">Collection</button>
                   <div class="collection__pink-flamingo checkbox">
                     <input class="visually-hidden" type="checkbox" name="gold" id="pink-flamingo">
                     <label for="pink-flamingo">Pink Flamingo</label>
@@ -129,84 +133,110 @@
                   </div>
                 </fieldset>
                 <fieldset class="price">
-                  <legend>Price</legend>
+                  <legend class="visually-hidden">Price</legend>
+                  <button id="price-button" type="button">Price</button>
                   <div class="price__scrollbar">
                     <div class="price__scrollbar-active-line">
                       <div class="price__toggles">
                       </div>
                     </div>
-                     <div class="price__tags">
-                       <p>$ 55</p>
-                       <p>$ 155</p>
-                     </div>
+                      <div class="price__tags">
+                        <p>$ 55</p>
+                        <p>$ 155</p>
+                      </div>
                   </div>
                 </fieldset>
               </div>
               <button type="submit">Apply</button>
-              <button id="filter-button" type="button"><span>Clear All</span></button>
-            </div>
-          </form>
+              <button type="button">Clear All</button>
+            </form>
+          </div>
+          <button id="filter-button" type="button">Filter</button>
           <div class="catalog-goods">
             <div class="catalog-goods__inner">
               <div class="catalog-card">
-                <img src="img/desktop/catalog/double-pearl-earrings.png" width="270" height="272" alt="Double pearl earrings ">
-                <h3>Double pearl earrings </h3>
-                <p>$ 115</p>
+                <a href="#">
+                  <img src="img/desktop/catalog/double-pearl-earrings.png" width="270" height="272" alt="Double pearl earrings ">
+                  <h3>Double pearl earrings </h3>
+                  <p>$ 115</p>
+                </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/black-choker-gold-bead.png" width="270" height="272" alt="Choker with gold bead">
                 <h3>Choker with gold bead</h3>
                 <p>$ 55</p>
+              </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/gold-layered-necklace.png" width="270" height="272" alt="Gold layered necklace">
                 <h3>Gold layered necklace</h3>
                 <p>$ 155</p>
+              </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/blue-gemstone-pendant.png" width="270" height="272" alt="Blue gemstone pendant">
                 <h3>Blue gemstone pendant</h3>
                 <p>$ 105</p>
+              </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/boho-earrings.png" width="270" height="272" alt="Boho earrings">
                 <h3>Boho earrings</h3>
                 <p>$ 75</p>
+              </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/bird-necklace.png" width="270" height="272" alt="Gold bird necklace">
                 <h3>Gold bird necklace</h3>
                 <p>$ 135</p>
+              </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/black-leather-choker-necklace.png" width="270" height="272" alt="Black leather choker">
                 <h3>Black leather choker</h3>
                 <p>$ 85</p>
+              </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/purple-gemstone-necklace.jpg" width="270" height="272" alt="Necklace with amethyst">
                 <h3>Necklace with amethyst</h3>
                 <p>$ 145</p>
+              </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/elephant-earrings.png" width="270" height="272" alt="Elephant earrings">
                 <h3>Elephant earrings</h3>
                 <p>$ 95</p>
+              </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/threader-necklace-closeup.png" width="270" height="272" alt="Threader necklace">
                 <h3>Threader necklace</h3>
                 <p>$ 115</p>
+              </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/origami-crane-necklace.png" width="270" height="272" alt="Origami crane necklace">
                 <h3>Origami crane necklace</h3>
                 <p>$ 105</p>
+              </a>
               </div>
               <div class="catalog-card">
+                <a href="#">
                 <img src="img/desktop/catalog/marble-earrings.png" width="270" height="272" alt="Marble earrings">
                 <h3>Marble earrings</h3>
                 <p>$ 95</p>
+              </a>
               </div>
               <div class="catalog-pagination">
                 <div class="catalog-pagination__inner">
@@ -231,32 +261,38 @@
         <div class="sign-up">
           <p>The good stuff in your inbox </p>
           <p>News and updates from CH. No spam, we promise.</p>
-          <div class="sign-up__input-wrapper">
-            <input type="text" size="15" placeholder="Your E-mail">
-            <p><a href="#">Sign Up</a></p>
-          </div>
+          <form id="shape" class="mail-shape" action="#" method="post">
+            <fieldset class="mail-shape__inner">
+              <legend class="visually-hidden">Sign up form</legend>
+              <div class="mail-shape__input-wrapper">
+                <input id="input-mail" type="text" name="mail" size="15" placeholder="Your E-mail">
+                <label for="input-mail" class="visually-hidden">E-mail</label>
+              </div>
+              <button type="submit">Sign Up</button>
+            </fieldset>
+          </form>
         </div>
-          <div class="additional-information">
-            <ul>
-              <li><a href="#">Ordering & Payment</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Returns & Exchanges</a></li>
-              <li><a href="#">Delivery</a></li>
-            </ul>
-          </div>
-          <div class="about-ch">
-            <ul>
-              <li><a href="#">About CH</a></li>
-              <li><a href="#">Stores & Hours</a></li>
-              <li><a href="#">Jobs</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
+        <div class="additional-information">
+          <ul>
+            <li><a href="#">Ordering & Payment</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Delivery</a></li>
+          </ul>
+        </div>
+        <div class="about-ch">
+          <ul>
+            <li><a href="#">About CH</a></li>
+            <li><a href="#">Stores & Hours</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
         <div class="socials">
-          <p class="socials__facebook"><a href="">Facebook</a></p>
-          <p class="socials__instagram"><a href="">Instagram</a></p>
-          <p class="socials__pinterest"><a href="">Pinterest</a></p>
-          <p class="socials__twitter"><a href="">Twitter</a></p>
+          <p class="socials__facebook"><a href="https://www.facebook.com/">Facebook</a></p>
+          <p class="socials__instagram"><a href="https://www.instagram.com/">Instagram</a></p>
+          <p class="socials__pinterest"><a href="https://www.pinterest.com/">Pinterest</a></p>
+          <p class="socials__twitter"><a href="https://twitter.com/">Twitter</a></p>
         </div>
       </div>
     </footer>
@@ -265,14 +301,16 @@
     <div class="popup-login">
       <div class="popup-login__inner">
         <div class="popup-login__background">
-          <div class="popup-login__close-button"></div>
+          <button>
+            <span></span>
+          </button>
         </div>
-        <form class="popup-login__shape" action="#" method="post">
+        <form id="popup-login-shape" class="popup-login__shape" action="#" method="post">
           <div class="popup-login__shape-inner">
             <fieldset class="popup-login__main-shape">
               <legend>Log In</legend>
               <div class="popup-login__enter-mail">
-                <input type="mail" placeholder="Your E-mail">
+                <input id="input-popup-mail" type="email" placeholder="Your E-mail">
               </div>
               <div class="popup-login__enter-password">
                 <input type="text" placeholder="Password">
@@ -284,7 +322,6 @@
               <div class="popup-login__sign-up">
                 <p>Don’t have an account? <a href="#">Sign up</a></p>
               </div>
-
             </fieldset>
           </div>
         </form>
@@ -296,9 +333,10 @@
       <form class="popup-filter__shape" action="#" method="post">
         <div class="popup-filter__shape-inner">
           <div class="popup-filter__filter">
-            <div id="filter-close-button" class="popup-filter__close-button"></div>
+            <div class="popup-filter__close-button"></div>
             <fieldset class="product">
-              <legend>Product</legend>
+              <legend class="visually-hidden">Product</legend>
+              <button id="product-button" type="button">Product</button>
               <div class="product__necklaces checkbox">
                 <input class="visually-hidden" type="checkbox" name="necklaces-popup" id="necklaces-popup" checked>
                 <label for="necklaces-popup">Necklaces</label>
@@ -317,7 +355,8 @@
               </div>
             </fieldset>
             <fieldset class="material">
-              <legend>Material</legend>
+              <legend class="visually-hidden">Material</legend>
+              <button id="material-button" type="button">Material</button>
               <div class="material__gold checkbox">
                 <input class="visually-hidden" type="checkbox" name="gold-popup" id="gold-popup">
                 <label for="gold-popup">Gold</label>
@@ -328,7 +367,8 @@
               </div>
             </fieldset>
             <fieldset class="collection">
-              <legend>Collection</legend>
+              <legend class="visually-hidden">Collection</legend>
+              <button id="collection-button" type="button">Collection</button>
               <div class="collection__pink-flamingo checkbox">
                 <input class="visually-hidden" type="checkbox" name="pink-flamingo-popup" id="pink-flamingo-popup">
                 <label for="pink-flamingo-popup">Pink Flamingo</label>
@@ -339,7 +379,8 @@
               </div>
             </fieldset>
             <fieldset class="price">
-              <legend>Price</legend>
+              <legend class="visually-hidden">Price</legend>
+              <button id="price-button" type="button">Price</button>
               <div class="price__scrollbar">
                 <div class="price__scrollbar-active-line">
                   <div class="price__toggles">
@@ -358,7 +399,7 @@
       </form>
     </div>
   </template>
-  <script src="js/catalog.js" type="module"></script>
+  <script src="js/main.js" type="module"></script>
 </body>
 </html>
 

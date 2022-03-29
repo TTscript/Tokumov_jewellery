@@ -12,14 +12,14 @@
   @media (max-width: $max-tablet) {
     background: url("../img/tablet/catalog/main-block.png") no-repeat;
     background-size: cover;
-    margin: 0 0 50px;
+    margin: 0 0 26px;
   }
 
   @media (max-width: $max-mobile) {
     background: url("../img/mobile/catalog/main-block.png") no-repeat;
     background-size: cover;
     text-align: center;
-    margin: 0 0 40px;
+    margin: 0 0 15px;
     padding: 0 15px;
   }
 }

@@ -1,24 +1,24 @@
 .material {
   border: 0;
   border-bottom: 1px solid $basic-brown;
+  cursor: pointer;
   margin: 0;
-  padding: 0 25px;
-
-  @media (max-width: 1169px) {
-    padding: 0 21px;
-  }
+  padding: 0;
 }
 
-.material legend {
+.material button:first-of-type {
   position: relative;
-  margin: 0 0 20px;
-  padding: 25px 0 0;
+  border: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: transparent;
+  text-align: left;
+  margin: 0;
+  padding: 25px 0 20px 25px;
 
-  @media (max-width: 1169px) {
+  @media (max-width: $intermediate-tablet) {
     font-size: 18px;
     line-height: 23px;
-    margin: 0 0 32px;
-    padding: 36px 0 0;
   }
 
   @media (max-width: 450px) {
@@ -29,18 +29,22 @@
   &::after {
     content: "";
     position: absolute;
-    top: 29px;
-    right: -135px;
+    top: 28px;
+    right: 23px;
     margin-left: 10px;
-    background: url("../img/decor/accordion-arrow.svg");
+    -webkit-mask: url("../img/decor/accordion-arrow.svg") no-repeat 50% 50%;
+    mask: url("../img/decor/accordion-arrow.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: $basic-brown;
     background-size: cover;
     width: 15px;
     height: 8px;
     transform: rotate(180deg);
 
-    @media (max-width: 1169px) {
+    @media (max-width: $intermediate-tablet) {
       top: 41px;
-      right: -286px;
+      right: 40px;
       width: 23px;
       height: 12px;
     }
@@ -52,25 +56,34 @@
   }
 }
 
-.material.material--rotate-arrow legend {
+.material button:first-of-type:hover {
+  background-color: $basic-brown;
+  color: $basic-white;
+
+  &:after {
+    background-color: $basic-white;
+  }
+}
+
+.material.material--rotate-arrow button:first-of-type {
   &::after {
     transform: unset;
   }
 }
 
 .material div {
-  margin: 0 0 10px;
-  padding: 0 0 0 9px;
+  margin: 0 0 6px;
+  padding: 6px 0 0;
 
   &:last-child {
     margin-bottom: 23px;
 
-    @media (max-width: 1169px) {
+    @media (max-width: $intermediate-tablet) {
       margin-bottom: 35px;
     }
   }
 
-  @media (max-width: 1169px) {
+  @media (max-width: $intermediate-tablet) {
     margin: 0 0 15px;
   }
 }
@@ -79,9 +92,8 @@
   font-size: 14px;
   line-height: 18px;
   margin: 0;
-  padding: 0;
 
-  @media (max-width: 1169px) {
+  @media (max-width: $intermediate-tablet) {
     font-size: 16px;
     line-height: 21px;
   }

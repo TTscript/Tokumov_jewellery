@@ -1,9 +1,9 @@
 
 //SLIDER
-const goods = document.querySelector('.goods');
+const goods = document.querySelector('.goods__inner');
 const paginationBlock = document.querySelector('.pagination__desktop');
-const paginationDesktopNumbers = document.querySelectorAll('.pagination__desktop a');
-const paginationTabletNumbers = document.querySelectorAll('.pagination__tablet a');
+const paginationDesktopNumbers = document.querySelectorAll('.pagination__desktop button');
+const paginationTabletNumbers = document.querySelectorAll('.pagination__tablet button');
 const leftArrow = document.querySelector('.new-entries__left-arrow');
 const rightArrow = document.querySelector('.new-entries__right-arrow');
 const goodsWrapper = document.querySelector('.new-entries__inner');
@@ -14,8 +14,8 @@ const mediaQueryTablet = window.matchMedia('(max-width: 1023px)');
 //PAGINATION COLORS
 
 let activeNumber = false;
-const desktopFigures = Array.from(document.querySelector('.pagination__desktop').querySelectorAll('a'));
-const tabletFigures = Array.from(document.querySelector('.pagination__tablet').querySelectorAll('a'));
+const desktopFigures = Array.from(document.querySelector('.pagination__desktop').querySelectorAll('button'));
+const tabletFigures = Array.from(document.querySelector('.pagination__tablet').querySelectorAll('button'));
 let numberOne = true;
 let numberTwo = false;
 let numberThree = false;

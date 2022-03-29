@@ -1,0 +1,78 @@
+.mail-shape__inner{
+  display: flex;
+  justify-content: flex-start;
+  border: 0;
+  border-bottom: 1px solid $basic-white;
+  max-width: 566px;
+  margin: 0;
+  padding: 0;
+}
+
+.mail-shape__input-wrapper {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.mail-shape__error {
+  border: 2px solid $error-message
+}
+
+.mail-shape__inner input {
+  // min-width: 76%;
+  min-width: 100%;
+  background-color: transparent;
+  border: 0;
+  color: $basic-white;
+
+  &:hover {
+    outline: 1px solid $basic-white;
+  }
+
+  &::placeholder {
+    color: $basic-grey;
+    font-size: 14px;
+  }
+}
+
+.mail-shape__inner button {
+  position: relative;
+  white-space: nowrap;
+  color: $basic-white;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 10px 0 10px 10px;
+
+  &:hover {
+    opacity: 0.6;
+    transition: 0.2s;
+    color: $basic-brown;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
+  &::after {
+    content: "";
+    // position: absolute;
+    // top: 16px;
+    // right: 14px;
+    display: inline-block;
+    -webkit-mask: url("../img/decor/arrow.svg") no-repeat 50% 50%;
+    mask: url("../img/decor/arrow.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: $basic-white;
+    background-size: 29px 9px;
+    width: 29px;
+    height: 9px;
+    transform: rotate(180deg);
+    margin-left: 15px;
+  }
+}
+
+

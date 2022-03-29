@@ -60,6 +60,7 @@
 
 .popup-filter__close-button {
   position: relative;
+  z-index: 1;
   cursor: pointer;
 
   &::before {
@@ -94,7 +95,7 @@
   }
 }
 
-.popup-filter__shape button[type="submit"] {
+.popup-filter__filter > button[type="submit"] {
   display: block;
   border: 0;
   color: $basic-white;
@@ -104,7 +105,7 @@
   margin: 0 0 25px;
   padding: 0;
 
-  @media (max-width: 1169px) {
+  @media (max-width: $intermediate-tablet) {
     transform: translateX(20px);
     min-width: 270px;
   }
@@ -116,7 +117,7 @@
   }
 }
 
-.popup-filter__shape button[type="button"] {
+.popup-filter__filter > button[type="button"] {
   display: block;
   border: 1px solid $basic-brown;
   color: $basic-dark;
@@ -127,7 +128,7 @@
   margin: 0 0 20px;
   padding: 0;
 
-  @media (max-width: 1169px) {
+  @media (max-width: $intermediate-tablet) {
     transform: translateX(20px);
     min-width: 270px;
   }

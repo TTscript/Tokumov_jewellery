@@ -48,10 +48,20 @@
   }
 }
 
-.popup-login__close-button {
+.popup-login__background button {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 5px;
+  padding: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+}
+
+.popup-login__background span {
+  position: absolute;
+  top: 0;
+  right: 5px;
   -webkit-mask: url("../img/decor/cross.svg") no-repeat 50% 50%;
   mask: url("../img/decor/cross.svg") no-repeat 50% 50%;
   -webkit-mask-size: cover;
@@ -63,6 +73,14 @@
   margin: 0;
   padding: 0;
   z-index: 1;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    background-color: $basic-brown;
+  }
 
   @media (max-width: $max-tablet) and (min-width: $min-tablet){
     background-size: 20px;
@@ -111,11 +129,14 @@
 
 .popup-login__main-shape input {
   border: 0;
-  border-bottom: 1px solid $basic-dark;
   background-color: transparent;
   min-width: 100%;
   margin: 0;
   padding: 0 0 9px;
+
+  &:hover {
+    border: 1px solid $basic-dark;
+  }
 
   &::placeholder {
     font-size: 14px;
@@ -126,6 +147,7 @@
 
 .popup-login__enter-mail {
   min-width: 100%;
+  border-bottom: 1px solid $basic-dark;
   margin: 0 0 34px;
   padding: 0;
 
@@ -138,8 +160,13 @@
   }
 }
 
+.popup-login__error {
+  border: 2px solid $error-message;
+}
+
 .popup-login__enter-password {
   min-width: 100%;
+  border-bottom: 1px solid $basic-dark;
   margin: 0 0 5px;
   padding: 0;
 
@@ -157,7 +184,13 @@
 }
 
 .popup-login__forgot-password {
+  transition: 0.2s;
   margin: 0 0 45px auto;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
 
   @media (max-width: $max-tablet) {
     margin: 0 7px 0 auto;
@@ -177,6 +210,10 @@
   align-self: flex-end;
   margin: 0 0 0 auto;
   padding: 0;
+
+  &:active {
+    color: $basic-brown;
+  }
 }
 
 .popup-login__main-shape button {
@@ -185,8 +222,20 @@
   border: 0;
   min-width: 340px;
   min-height: 68px;
+  cursor: pointer;
   margin: 0 0 15px;
   padding: 0;
+
+  &:hover {
+    background-color: transparent;
+    color: $basic-dark;
+    border: 1px solid $basic-brown;
+  }
+
+  &:active {
+    background-color: $basic-brown;
+    color: $basic-white;
+  }
 
   @media (max-width: 490px) {
     min-width: 240px;
@@ -204,4 +253,12 @@
 .popup-login__sign-up a {
   color: $basic-dark;
   margin: 0 0 0 auto;
+
+  &:hover {
+    color: $basic-brown;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }

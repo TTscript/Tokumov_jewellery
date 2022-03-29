@@ -90,6 +90,12 @@
   }
 }
 
+.page-header__logo.catalog-logo svg {
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
 .page-header__logo.page-header__logo--change-color svg {
   @media (max-width: $max-tablet) {
     stroke: $basic-white;
@@ -109,8 +115,10 @@
   padding: 0;
 
   &:hover {
-    transform: scale(1.2);
-    transition: 0.2s;
+    @media (max-width: $max-tablet) {
+      transform: scale(1.2);
+      transition: 0.2s;
+    }
   }
 }
 

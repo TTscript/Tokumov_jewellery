@@ -53,6 +53,10 @@
   margin: 0;
   padding: 43px 49px 36px 42px;
 
+  &:hover {
+    background-color: $basic-beige;
+  }
+
   &:last-child {
     border: 0;
   }
@@ -108,13 +112,13 @@
       height: 20px;
     }
 
-    @media (max-width: $max-mobile) {
-      top: -39px;
-      left: 90px;
-      background-size: 22px 20px;
-      width: 22px;
-      height: 20px;
-    }
+    // @media (max-width: $max-mobile) {
+    //   top: -39px;
+    //   left: 90px;
+    //   background-size: 22px 20px;
+    //   width: 22px;
+    //   height: 20px;
+    // }
   }
 
   @media (max-width: $max-tablet) {
@@ -122,23 +126,23 @@
     margin-bottom: 6px;
   }
 
-  @media (max-width: $max-mobile) {
-    font-size: 16px;
-    text-indent: 0;
-    max-width: 150px;
-    line-height: 20px;
-    margin-bottom: 0;
-  }
+  // @media (max-width: $max-mobile) {
+  //   font-size: 16px;
+  //   text-indent: 0;
+  //   max-width: 150px;
+  //   line-height: 20px;
+  //   margin-bottom: 0;
+  // }
 }
 
 .asked-questions__block:first-child h3 {
-  @media (max-width: $max-mobile) {
-    max-width: 185px;
+  // @media (max-width: $max-mobile) {
+  //   max-width: 185px;
 
-    &::after {
-      left: 57px;
-    }
-  }
+  //   &::after {
+  //     left: 57px;
+  //   }
+  // }
 }
 
 .asked-questions__block.asked-questions__block--rotate-arrow h3 {
@@ -157,34 +161,34 @@
     max-width: 550px;
   }
 
-  @media (max-width: $max-mobile) {
-    font-size: 14px;
-    line-height: 20px;
-    max-width: 205px;
-    padding: 0;
-  }
+  // @media (max-width: $max-mobile) {
+  //   font-size: 14px;
+  //   line-height: 20px;
+  //   max-width: 205px;
+  //   padding: 0;
+  // }
 }
 
-.asked-questions__block[data-question="payment"] h3{
-  @media (max-width: $max-mobile) {
-    max-width: 170px;
+// .asked-questions__block[data-question="payment"] h3{
+//   @media (max-width: $max-mobile) {
+//     max-width: 170px;
 
-    &::after {
-      top: -41px;
-      left: 71px;
-    }
-  }
-}
+//     &::after {
+//       top: -41px;
+//       left: 71px;
+//     }
+//   }
+// }
 
-.asked-questions__block[data-question="return"] h3{
-  @media (max-width: $max-mobile) {
-    max-width: 210px;
-    line-height: 22px;
+// .asked-questions__block[data-question="return"] h3{
+//   @media (max-width: $max-mobile) {
+//     max-width: 210px;
+//     line-height: 22px;
 
-    &::after {
-      top: -41px;
-      left: 31px;
-    }
-  }
-}
+//     &::after {
+//       top: -41px;
+//       left: 31px;
+//     }
+//   }
+// }
 

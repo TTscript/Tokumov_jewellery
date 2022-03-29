@@ -64,6 +64,13 @@
 }
 
 .crystals p {
+  transition: 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.2s;
+  }
+
   &:first-of-type {
     font-size: 14px;
     line-height: 18px;
@@ -76,6 +83,14 @@
     border-bottom: 1px solid $basic-brown;
     margin: 0;
     padding: 0 0 3px;
+  }
+}
+
+.crystals a {
+  color: $basic-dark;
+
+  &:active {
+    color: $basic-brown;
   }
 }
 

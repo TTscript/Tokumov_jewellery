@@ -1,15 +1,134 @@
 .filter {
-  border: 1px solid $basic-brown;
-  max-width: 256px;
-  margin: 0 0 35px 0;
+  display: inline-flex;
+  flex-direction: column;
+  box-shadow: 0px 5px 32px 0px $filter-shadow;
+  margin: 0;
   padding: 0;
 
-  @media (max-width: 1169px) {
+  @media (max-width: $intermediate-tablet) {
     display: none;
+    max-width: 870px;
+    margin: 0 auto;
+    max-width: 456px;
   }
 }
 
 .filter--display-none {
   display: none;
+}
+
+.filter__inner {
+  border: 1px solid $basic-brown;
+  max-width: 256px;
+  margin: 0 0 35px 0;
+  padding: 0;
+
+  @media (max-width: $intermediate-tablet) {
+    border: 0;
+    max-width: unset;
+    // display: none;
+  }
+}
+
+.filter__inner .filter__close-button {
+  display: none;
+
+  @media (max-width: $intermediate-tablet) {
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    display: block;
+    z-index: 1;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -14px;
+      right: -15px;
+      border-radius: 50%;
+      background-color: $basic-dark;
+      width: 32px;
+      height: 32px;
+
+      @media (max-width: 450px) {
+        top: 38px;
+        right: -10px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: -6px;
+      background: url("../img/decor/cross.svg") no-repeat;
+      width: 14px;
+      height: 14px;
+
+      @media (max-width: 450px) {
+        top: 46px;
+        right: -1px;
+      }
+    }
+  }
+}
+
+.filter__inner--display-none {
+  display: none;
+}
+
+.filter > button[type="submit"] {
+  border: 0;
+  color: $basic-white;
+  min-width: 250px;
+  min-height: 68px;
+  background-color: $basic-brown;
+  cursor: pointer;
+  margin: 0 0 25px 0;
+  padding: 0;
+
+  &:hover {
+    border: 1px solid $basic-brown;
+    color: $basic-dark;
+    background-color: transparent;
+  }
+
+  &:active {
+    background-color: $basic-brown;
+    color: $basic-white;
+  }
+
+  @media (max-width: $intermediate-tablet) {
+    // display: none;
+    display: block;
+  }
+}
+
+.filter > button[type="button"] {
+  border: 1px solid $basic-brown;
+  color: $basic-dark;
+  background-color: transparent;
+  min-width: 250px;
+  min-height: 68px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+
+  &:hover {
+    background-color: $basic-brown;
+    color: white;
+    border: 0;
+  }
+
+  &:active {
+    border: 1px solid $basic-brown;
+    color: $basic-dark;
+    background-color: transparent;
+  }
+
+  @media (max-width: $intermediate-tablet) {
+    // display: none;
+  }
 }
 

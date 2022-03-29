@@ -1,6 +1,29 @@
-.checkbox label {
-  margin: 0;
+.checkbox input {
+  position: absolute;
+  width: 1px;
+  margin: -1px;
+  border: 0;
   padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  height: 1px;
+}
+
+.checkbox input:focus + label {
+  outline: 2px solid $basic-dark;
+}
+
+.checkbox label {
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  padding: 0 0 0 34px;
+
+  &:hover {
+    color: $basic-brown;
+  }
 
   &::before {
     content: "";

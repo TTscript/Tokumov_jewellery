@@ -16,7 +16,7 @@
   }
 }
 
-.blog h2 {
+.blog__header h2 {
   @include cormorantgaramond-bold();
   color: $basic-dark;
   font-size: 34px;
@@ -25,17 +25,31 @@
   padding: 0;
 }
 
-.blog > p {
+.blog__header a {
+  color: $basic-dark;
+
+  &:active {
+    color: $basic-brown;
+  }
+}
+
+.blog__header p {
   border-bottom: 1px solid $basic-brown;
+  transition: 0.2s;
   margin: 0 0 62px;
   padding: 0;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.2s;
+  }
 
   @media (max-width: $max-mobile) {
     margin: 0 0 52px;
   }
 }
 
-.blog__inner {
+.blog__articles-container {
   display: flex;
   justify-content: center;
   align-items: center;
