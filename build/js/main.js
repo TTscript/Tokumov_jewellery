@@ -187,8 +187,9 @@ burgerButton.addEventListener('click', () => {
 });
 
 //////////////////////////////////////// BURGER MENU
-
-window.addEventListener('DOMContentLoaded', (event) => {
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+window.onload = function () {
   if (window.location.pathname === '/index.html') {
     console.log(window.location.pathname);
 
@@ -269,104 +270,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     ////////////////////////////////////////FILTER
 
 
-    ////////////////////////////////////////////FILTER-POPUP
-
-    // const filterPopup = document.querySelector('#popup-filter').content.querySelector('.popup-filter');
-
-    // const filterButton = document.querySelector('#filter-button');
-    // // const popupCloseButton = filterPopup.querySelector('#filter-close-button');
-    // const popupFilterInputs = filterPopup.querySelectorAll('input');
-    // const popupResetButton = filterPopup.querySelector('#popup-filter-reset');
-
-    // const createFilterPopup = () => {
-    //   const popup = filterPopup.cloneNode(true);
-    //   bodyTag.appendChild(filterPopup);
-    //   filterPopup.classList.add('popup-filter--appear');
-    //   return popup;
-    // };
-
-    // createFilterPopup();
-
-    // const closeFilterPopupClick = () => {
-    //   filterPopup.remove();
-    //   popupCloseButton.removeEventListener('click', closePopupClick);
-    // };
-
-    // const closeFilterPopupEsc = (evt) => {
-    //   if (isEscEvent(evt)) {
-    //     filterPopup.remove();
-    //   }
-    //   window.removeEventListener('keydown', closePopupEsc);
-    // };
-
-    // const closeFilterPopupOverlay = (evt) => {
-    //   if (evt.target === filterPopup) {
-    //     filterPopup.remove();
-    //     window.removeEventListener('click', closePopupOverlay);
-    //   }
-    // };
-
-    // const closeFilterPopup = () => {
-    //   popupCloseButton.addEventListener('click', closeFilterPopupClick);
-    //   window.addEventListener('keydown', closeFilterPopupEsc);
-    //   window.addEventListener('click', closeFilterPopupOverlay);
-    // };
-
-    // filterButton.addEventListener('click', installFilterPopup);
-    // popupResetButton.addEventListener('click', () => {
-    //   popupFilterInputs.forEach((item) => {
-    //     item.checked = false;
-    //   });
-    // });
-
-    // function installFilterPopup() {
-    //   createFilterPopup();
-    //   setTimeout(() => {
-    //     closeFilterPopup();
-    //   }, 250);
-    // }
-
-    // filterProduct.addEventListener('click', () => {
-    //   filterProduct.classList.toggle('product--rotate-arrow');
-    //   filterProductItems.forEach((item) => {
-    //     item.classList.toggle('popup-filter--display-none');
-    //   });
-    // });
-
-    // filterMaterial.addEventListener('click', () => {
-    //   filterMaterial.classList.toggle('material--rotate-arrow');
-    //   filterMaterialItems.forEach((item) => {
-    //     item.classList.toggle('popup-filter--display-none');
-    //   });
-    // });
-
-    // filterCollection.addEventListener('click', () => {
-    //   filterCollection.classList.toggle('collection--rotate-arrow');
-    //   filterCollectionItems.forEach((item) => {
-    //     item.classList.toggle('popup-filter--display-none');
-    //   });
-    // });
-
-    // filterPrice.addEventListener('click', () => {
-    //   filterPrice.classList.toggle('price--rotate-arrow');
-    //   filterPriceItem.classList.toggle('popup-filter--display-none');
-    // });
-
-    //////////////////////////////////////////FILTER-POPUP
-
-  }
-
-  //////////////////////////////////////////FILTER-POPUP
-
-  // function hidePopupFilterItems(items) {
-  //   items.forEach((item) => {
-  //     item.classList.add('popup-filter--display-none');
-  //   });
-  // }
-
-  //////////////////////////////////////////FILTER-POPUP
-
-
   ////////////////////////////////////////FILTER
 
   function hideFilterItems(items) {
@@ -375,6 +278,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
   }
   ////////////////////////////////////////FILTER
-});
-
-
+  }
+};
