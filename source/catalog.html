@@ -22,17 +22,19 @@
         <div class="page-header__search-block">
           <div class="page-header__search-inner">
             <input id="search" type="text" placeholder="Type here to search">
+            <label class="visually-hidden" for="search">Search jewellerry</label>
           </div>
         </div>
         <div class="page-header__tablet">
           <div class="burger-closed">
-            <button>
+            <button type="button">
               <span></span>
             </button>
           </div>
           <div class="burger-open">
             <div class="burger-open__search">
               <input id="burger-search" type="text">
+              <label class="visually-hidden" for="burger-search">Search jewellerry</label>
             </div>
             <div class="burger-open__list">
               <div class="burger-open__list-nav">
@@ -314,7 +316,7 @@
               <legend class="visually-hidden">Sign up form</legend>
               <div class="mail-shape__input-wrapper">
                 <input id="input-mail" type="text" name="mail" size="15" placeholder="Your E-mail">
-                <label for="input-mail" class="visually-hidden">E-mail</label>
+                <label class="visually-hidden" for="input-mail">Enter E-mail</label>
               </div>
               <button type="submit">Sign Up</button>
             </fieldset>
@@ -349,7 +351,7 @@
     <div class="popup-login">
       <div class="popup-login__inner">
         <div class="popup-login__background">
-          <button>
+          <button type="button">
             <span></span>
           </button>
         </div>
@@ -359,9 +361,11 @@
               <legend>Log In</legend>
               <div class="popup-login__enter-mail">
                 <input id="input-popup-mail" type="email" placeholder="Your E-mail">
+                <label class="visually-hidden" for="input-popup-mail">Enter E-mail</label>
               </div>
               <div class="popup-login__enter-password">
-                <input type="text" placeholder="Password">
+                <input id="popup-login-password" type="text" placeholder="Password">
+                <label class="visually-hidden" for="popup-login-password">Enter password</label>
               </div>
               <div class="popup-login__forgot-password">
                 <p><a href="#">Forgot your password?</a></p>

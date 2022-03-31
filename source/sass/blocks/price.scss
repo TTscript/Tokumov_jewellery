@@ -11,7 +11,7 @@
   }
 
   @media (max-width: 450px) {
-    margin-bottom: 31px;
+    margin-bottom: 30px;
   }
 }
 
@@ -28,6 +28,11 @@
   @media (max-width: $intermediate-tablet) {
     font-size: 18px;
     line-height: 23px;
+    padding: 33px 0 23px 31px;
+  }
+
+  @media (max-width: 450px) {
+    padding: 23px 0 23px 20px;
   }
 
   &::after {
@@ -99,11 +104,21 @@
     border-bottom: 1px solid $basic-beige;
     max-width: 200px;
     width: 100%;
+
+    @media (max-width: $intermediate-tablet) {
+      top: 11px;
+      left: 39px;
+      max-width: 307px;
+    }
+
+    @media (max-width: 450px) {
+      left: 9px;
+      max-width: 250px;
+    }
   }
 
-
   @media (max-width: $intermediate-tablet) {
-    margin: 0 0 18px;
+    margin: 0 0 33px;
   }
 
   @media (max-width: 450px) {
@@ -127,10 +142,12 @@
 
     @media (max-width: $intermediate-tablet) {
       min-width: 178px;
+      top: 11px;
+      left: -75px;
     }
 
     @media (max-width: 450px) {
-      left: 46px;
+      left: -29px;
       min-width: 135px;
     }
   }
@@ -152,14 +169,14 @@
     background-color: $basic-brown;
 
     @media (max-width: $intermediate-tablet) {
-      top: -8px;
-      left: 54px;
+      top: 2px;
+      left: -85px;
       width: 18px;
       height: 18px;
     }
 
     @media (max-width: 450px) {
-      left: 28px;
+      left: -40px;
     }
   }
 
@@ -176,12 +193,12 @@
     @media (max-width: $intermediate-tablet) {
       width: 18px;
       height: 18px;
-      top: -8px;
-      left: 230px;
+      top: 3px;
+      left: 91px;
     }
 
     @media (max-width: 450px) {
-      left: 167px;
+      left: 98px;
     }
   }
 }
@@ -192,17 +209,18 @@
   align-items: center;
   column-gap: 60px;
   margin: 0 0 18px;
-  padding: 0;
+  padding: 17px 0 0;
 
   @media (max-width: $intermediate-tablet) {
     justify-content: flex-start;
     padding-left: 37px;
-    column-gap: 137px;
+    column-gap: 126px;
+    padding: 27px 0 0 47px;
   }
 
   @media (max-width: 450px) {
-    padding: 16px 0 0 11px;
-    column-gap: 101px;
+    padding: 26px 0 0 11px;
+    column-gap: 88px;
   }
 }
 
@@ -210,7 +228,6 @@
   font-size: 14px;
   line-height: 18px;
   margin: 0;
-  padding: 17px 0 0;
 
   &:last-child {
     transform: translateX(12px);

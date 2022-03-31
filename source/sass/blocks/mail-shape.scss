@@ -58,6 +58,7 @@
   &::after {
     content: "";
     display: inline-block;
+    vertical-align: middle;
     -webkit-mask: url("../img/decor/arrow.svg");
     mask: url("../img/decor/arrow.svg");
     -webkit-mask-size: cover;

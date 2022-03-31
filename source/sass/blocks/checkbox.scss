@@ -21,6 +21,14 @@
   margin: 0;
   padding: 0 0 0 34px;
 
+  @media (max-width: $intermediate-tablet) {
+    padding: 0 0 0 42px;
+  }
+
+  @media (max-width: 450px) {
+    padding: 0 0 0 30px;
+  }
+
   &:hover {
     color: $basic-brown;
   }
@@ -28,6 +36,7 @@
   &::before {
     content: "";
     display: inline-block;
+    vertical-align: middle;
     width: 14px;
     height: 14px;
     border: 1px solid $basic-brown;
@@ -45,6 +54,7 @@
   &::before {
     content: "";
     display: inline-block;
+    vertical-align: middle;
     width: 14px;
     height: 14px;
     border: 1px solid $basic-brown;

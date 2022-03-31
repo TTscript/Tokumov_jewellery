@@ -22,17 +22,19 @@
         <div class="page-header__search-block">
           <div class="page-header__search-inner">
             <input id="search" type="text" placeholder="Type here to search">
+            <label class="visually-hidden" for="search">Search jewellerry</label>
           </div>
         </div>
         <div class="page-header__tablet">
           <div class="burger-closed">
-            <button>
+            <button type="button">
               <span></span>
             </button>
           </div>
           <div class="burger-open">
             <div class="burger-open__search">
               <input id="burger-search" type="text">
+              <label class="visually-hidden" for="burger-search">Search jewellerry</label>
             </div>
             <div class="burger-open__list">
               <div class="burger-open__list-nav">
@@ -87,10 +89,10 @@
           <div class="new-entries__header">
             <h3>New In</h3>
             <div class="new-entries__buttons-block">
-              <button class="new-entries__left-arrow">
+              <button class="new-entries__left-arrow" type="button">
                 <span></span>
               </button>
-              <button class="new-entries__right-arrow">
+              <button class="new-entries__right-arrow" type="button">
                 <span></span>
               </button>
             </div>
@@ -110,7 +112,7 @@
                     <p>$ 145</p>
                   </a>
                 </div>
-                <div class="goods__card goods__layered-choker">
+                <div class="goods__card">
                   <a href="#">
                     <picture>
                       <!-- 1х: 270px; 2x: 540px -->
@@ -121,7 +123,7 @@
                     <p>$ 115</p>
                   </a>
                 </div>
-                <div class="goods__card goods__gold-chain">
+                <div class="goods__card">
                   <a href="#">
                     <picture>
                       <!-- 1х: 270px; 2x: 540px -->
@@ -132,7 +134,7 @@
                     <p>$ 215</p>
                   </a>
                 </div>
-                <div class="goods__card goods__earrings">
+                <div class="goods__card">
                   <a href="#">
                     <picture>
                       <!-- 1х: 270px; 2x: 540px -->
@@ -165,7 +167,7 @@
                     <p>$ 55</p>
                   </a>
                 </div>
-                <div class="goods__card goods__earrings">
+                <div class="goods__card">
                   <a href="#">
                     <picture>
                       <!-- 1х: 270px; 2x: 540px -->
@@ -176,7 +178,7 @@
                     <p>$ 85</p>
                   </a>
                 </div>
-                <div class="goods__card goods__earrings">
+                <div class="goods__card">
                   <a href="#">
                     <picture>
                       <!-- 1х: 270px; 2x: 540px -->
@@ -187,7 +189,7 @@
                     <p>$ 105</p>
                   </a>
                 </div>
-                <div class="goods__card goods__boho-earrings">
+                <div class="goods__card">
                   <a href="#">
                     <picture>
                       <!-- 1х: 270px; 2x: 540px -->
@@ -198,7 +200,7 @@
                     <p>$ 75</p>
                   </a>
                 </div>
-                <div class="goods__card goods__double-pearl-earrings">
+                <div class="goods__card">
                   <a href="#">
                     <picture>
                       <!-- 1х: 270px; 2x: 540px -->
@@ -209,7 +211,7 @@
                     <p>$ 115</p>
                   </a>
                 </div>
-                <div class="goods__card goods__elephant-earrings">
+                <div class="goods__card">
                   <a href="#">
                     <picture>
                       <!-- 1х: 270px; 2x: 540px -->
@@ -220,7 +222,7 @@
                     <p>$ 95</p>
                   </a>
                 </div>
-                <div class="goods__card goods__gold-layered-necklace">
+                <div class="goods__card">
                   <a href="#">
                     <picture>
                       <!-- 1х: 270px; 2x: 540px -->
@@ -235,24 +237,23 @@
             </div>
             <div class="pagination">
               <div class="pagination__desktop">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
+                <button type="button">1</button>
+                <button type="button">2</button>
+                <button type="button">3</button>
               </div>
               <div class="pagination__tablet">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
+                <button type="button">1</button>
+                <button type="button">2</button>
+                <button type="button">3</button>
+                <button type="button">4</button>
+                <button type="button">5</button>
+                <button type="button">6</button>
               </div>
               <div class="pagination__mobile">
                 <p><span>1</span>of 6</p>
               </div>
             </div>
           </div>
-
         </div>
       </section>
       <section class="blog">
@@ -316,40 +317,40 @@
         <p><a href="#">Follow us</a></p>
         <div class="follow-us__gallery">
           <a href="#">
-            <picture data-src="img/desktop/main/follow-us/1">
+            <picture data-name="1">
               <!-- 1х: 230px; 2x: 460px -->
               <source type="image/webp" srcset="img/desktop/main/follow-us/1.webp 1x, img/desktop/main/follow-us/1@2x.webp 2x">
-              <img src="img/desktop/main/follow-us/1.png" srcset="img/desktop/main/follow-us/1@2x.png 2x" width="230" height="230" alt="Квадратные сережки">
+              <img data-name="1" src="img/desktop/main/follow-us/1.png" srcset="img/desktop/main/follow-us/1@2x.png 2x" width="230" height="230" alt="Квадратные сережки">
             </picture>
-            <picture data-src="img/desktop/main/follow-us/2">
+            <picture data-name="2" data-src="img/desktop/main/follow-us/2">
               <!-- 1х: 230px; 2x: 460px -->
               <source type="image/webp" srcset="img/desktop/main/follow-us/2.webp 1x, img/desktop/main/follow-us/2@2x.webp 2x">
-              <img src="img/desktop/main/follow-us/2.png" srcset="img/desktop/main/follow-us/2@2x.png 2x" width="230" height="150" alt="Брошь">
+              <img data-name="2" src="img/desktop/main/follow-us/2.png" srcset="img/desktop/main/follow-us/2@2x.png 2x" width="230" height="150" alt="Брошь">
             </picture>
-            <picture data-src="img/desktop/main/follow-us/3">
+            <picture data-name="3" data-src="img/desktop/main/follow-us/3">
               <!-- 1х: 399px; 2x: 398px -->
               <source type="image/webp" srcset="img/desktop/main/follow-us/3.webp 1x, img/desktop/main/follow-us/3@2x.webp 2x">
-              <img src="img/desktop/main/follow-us/3.png" srcset="img/desktop/main/follow-us/3@2x.png 2x" width="399" height="412" alt="Сережки из овального камня">
+              <img data-name="3" src="img/desktop/main/follow-us/3.png" srcset="img/desktop/main/follow-us/3@2x.png 2x" width="399" height="412" alt="Сережки из овального камня">
             </picture>
-            <picture data-src="img/desktop/main/follow-us/4">
+            <picture data-name="4" data-src="img/desktop/main/follow-us/4">
               <!-- 1х: 230px; 2x: 460px -->
               <source type="image/webp" srcset="img/desktop/main/follow-us/4.webp 1x, img/desktop/main/follow-us/4@2x.webp 2x">
-              <img src="img/desktop/main/follow-us/4.png" srcset="img/desktop/main/follow-us/4@2x.png 2x" width="230" height="230" alt="Украшения из аметиста">
+              <img data-name="4" src="img/desktop/main/follow-us/4.png" srcset="img/desktop/main/follow-us/4@2x.png 2x" width="230" height="230" alt="Украшения из аметиста">
             </picture>
-            <picture data-src="img/desktop/main/follow-us/5">
+            <picture data-name="5" data-src="img/desktop/main/follow-us/5">
               <!-- 1х: 230px; 2x: 460px -->
               <source type="image/webp" srcset="img/desktop/main/follow-us/5.webp 1x, img/desktop/main/follow-us/5@2x.webp 2x">
-              <img src="img/desktop/main/follow-us/5.png" srcset="img/desktop/main/follow-us/5@2x.png 2x" width="230" height="150" alt="Цепочка с браслетом">
+              <img data-name="5" src="img/desktop/main/follow-us/5.png" srcset="img/desktop/main/follow-us/5@2x.png 2x" width="230" height="150" alt="Цепочка с браслетом">
             </picture>
-            <picture data-src="img/desktop/main/follow-us/6">
+            <picture data-name="6" data-src="img/desktop/main/follow-us/6">
               <!-- 1х: 230px; 2x: 460px -->
               <source type="image/webp" srcset="img/desktop/main/follow-us/6.webp 1x, img/desktop/main/follow-us/6@2x.webp 2x">
-              <img src="img/desktop/main/follow-us/6.png" srcset="img/desktop/main/follow-us/6@2x.png 2x" width="230" height="230" alt="Спиральные сережки">
+              <img data-name="6" src="img/desktop/main/follow-us/6.png" srcset="img/desktop/main/follow-us/6@2x.png 2x" width="230" height="230" alt="Спиральные сережки">
             </picture>
-            <picture data-src="img/desktop/main/follow-us/7">
+            <picture data-name="7" data-src="img/desktop/main/follow-us/7">
               <!-- 1х: 230px; 2x: 460px -->
               <source type="image/webp" srcset="img/desktop/main/follow-us/7.webp 1x, img/desktop/main/follow-us/7@2x.webp 2x">
-              <img src="img/desktop/main/follow-us/7.png" srcset="img/desktop/main/follow-us/7@2x.png 2x" width="230" height="150" alt="Кольца разных видов">
+              <img data-name="7" src="img/desktop/main/follow-us/7.png" srcset="img/desktop/main/follow-us/7@2x.png 2x" width="230" height="150" alt="Кольца разных видов">
             </picture>
           </a>
         </div>
@@ -365,7 +366,7 @@
               <legend class="visually-hidden">Sign up form</legend>
               <div class="mail-shape__input-wrapper">
                 <input id="input-mail" type="text" name="mail" size="15" placeholder="Your E-mail">
-                <label for="input-mail" class="visually-hidden">E-mail</label>
+                <label class="visually-hidden" for="input-mail">Enter E-mail</label>
               </div>
               <button type="submit">Sign Up</button>
             </fieldset>
@@ -400,7 +401,7 @@
     <div class="popup-login">
       <div class="popup-login__inner">
         <div class="popup-login__background">
-          <button>
+          <button type="button">
             <span></span>
           </button>
         </div>
@@ -410,9 +411,11 @@
               <legend>Log In</legend>
               <div class="popup-login__enter-mail">
                 <input id="input-popup-mail" type="email" placeholder="Your E-mail">
+                <label class="visually-hidden" for="input-popup-mail">Enter E-mail</label>
               </div>
               <div class="popup-login__enter-password">
-                <input type="text" placeholder="Password">
+                <input id="popup-login-password" type="text" placeholder="Password">
+                <label class="visually-hidden" for="popup-login-password">Enter password</label>
               </div>
               <div class="popup-login__forgot-password">
                 <p><a href="#">Forgot your password?</a></p>

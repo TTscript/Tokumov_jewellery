@@ -74,12 +74,14 @@ if (window.location.pathname === '/Tokumov_jewellery/build/index.html' || window
         item.style.height = 'auto';
       });
     } else if (mediaQueryTablet.matches) {
+      moveArrowsTabletSlider(paginationTabletNumbers, 707);
       pagination(tabletFigures, 'tablet');
+      swipeFigures(paginationTabletNumbers, 707);
 
       width = goodsWrapper.offsetWidth;
       goods.style.width = `${width * images.length}px`;
       images.forEach((item) => {
-        item.style.width = `${width / 2.19}px`;
+        item.style.width = `${width / 3.19}px`;
         item.style.height = 'auto';
       });
     }
@@ -210,11 +212,11 @@ if (window.location.pathname === '/Tokumov_jewellery/build/index.html' || window
   const size = gallery.childElementCount;
   let currentSlideWasChanged = false;
   let startX = 0;
-  // const galleryWidth = gallery.getBoundingClientRect().width;
+  const swiperWidth = gallery.getBoundingClientRect().width;
   let currentSlide = 0;
   let clickX = 0;
   let dragX = 0;
-  let x = currentSlide * width;
+  let x = currentSlide * swiperWidth;
 
   galleryLine.addEventListener('pointerdown', startDrag);
   window.addEventListener('pointerup', stopDrag);
@@ -331,11 +333,54 @@ if (window.location.pathname === '/Tokumov_jewellery/build/index.html' || window
     filterPriceItem.classList.toggle('filter--display-none');
   });
 
-  popupCloseButton.addEventListener('click', closeFilter);
+  const filterButton = document.querySelector('#filter-button');
+  const catalogWrapper = document.querySelector('.catalog__filter-wrapper');
+  const filterBlock = document.querySelector('.filter');
 
-  function closeFilter() {
-    document.querySelector('.catalog__filter-wrapper').classList.add('catalog__filter-wrapper-remove');
+  const isEscFilterEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+
+  function installFilter() {
+    createFilterPopup();
+    setTimeout(() => {
+      closeFilterPopup();
+    }, 50);
   }
+
+  function createFilterPopup() {
+    filterBlock.classList.add('filter--appear');
+    catalogWrapper.classList.add('catalog__filter-wrapper-add');
+  }
+
+  function closeFilterPopup() {
+    popupCloseButton.addEventListener('click', closeFilterButton);
+    catalogWrapper.addEventListener('click', closeFilterOverlay);
+    window.addEventListener('keydown', closeFilterKeydown);
+  }
+
+  function closeFilterButton() {
+    filterBlock.classList.remove('filter--appear');
+    catalogWrapper.classList.remove('catalog__filter-wrapper-add');
+    popupCloseButton.removeEventListener('click', closeFilterButton);
+  }
+
+  function closeFilterOverlay(e) {
+    if (e.target === catalogWrapper) {
+      filterBlock.classList.remove('filter--appear');
+      catalogWrapper.classList.remove('catalog__filter-wrapper-add');
+      catalogWrapper.removeEventListener('click', closeFilterOverlay);
+    }
+  }
+
+  function closeFilterKeydown(evt) {
+    if (isEscFilterEvent(evt)) {
+      filterBlock.classList.remove('filter--appear');
+      catalogWrapper.classList.remove('catalog__filter-wrapper-add');
+      window.removeEventListener('keydown', closeFilterKeydown);
+    }
+  }
+
+  filterButton.addEventListener('click', installFilter);
+
   ////////////////////////////////////////FILTER
 
 
