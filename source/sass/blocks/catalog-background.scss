@@ -1,6 +1,7 @@
 .catalog-background {
   background: url("../img/desktop/catalog/main-block.png") no-repeat;
   background-size: cover;
+  background-color: $basic-brown;
   min-height: 261px;
   display: flex;
   justify-content: center;
@@ -17,7 +18,7 @@
   @media (max-width: $max-tablet) {
     background: url("../img/tablet/catalog/main-block.png") no-repeat;
     background-size: cover;
-    margin: 0 0 26px;
+    margin: 0 0 51px;
 
     @media (min-resolution: 2dppx) {
       background: url("../img/tablet/catalog/main-block@2x.png") no-repeat;
@@ -29,7 +30,7 @@
     background: url("../img/mobile/catalog/main-block.png") no-repeat;
     background-size: cover;
     text-align: center;
-    margin: 0 0 15px;
+    margin: 0 0 41px;
     padding: 0 15px;
 
     @media (min-resolution: 2dppx) {
@@ -44,6 +45,8 @@
   @include cormorantgaramond-bold();
   font-size: 34px;
   line-height: 44px;
+  max-width: 500px;
+  text-align: center;
   margin: 0;
   padding: 0;
 }
@@ -52,6 +55,7 @@
   @include cormorantgaramond-mediumitalic();
   font-size: 22px;
   line-height: 29px;
+  max-width: 500px;
   margin: 0;
   padding: 0;
 }

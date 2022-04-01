@@ -40,10 +40,11 @@
   }
 }
 
-.main-block h3 {
+.main-block h2 {
   @include cormorantgaramond-bold();
   line-height: 51px;
   letter-spacing: 0.03em;
+  max-width: 300px;
   margin: 0;
   padding: 0;
 
@@ -62,6 +63,7 @@
   @include cormorantgaramond-mediumitalic();
   font-size: 38px;
   line-height: 49px;
+  max-width: 500px;
   margin: 0;
   padding: 0;
 

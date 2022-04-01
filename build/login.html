@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- 16x16 -->
+  <link rel="icon" type="image/svg+xml" href="img/favicons/32.svg"> <!-- 32x32 -->
+  <link rel="apple-touch-icon" href="img/favicons/180.png"> <!-- 180x180 -->
+  <link rel="preload" href="fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/poppins-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramond-mediumitalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramond-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramond-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <title>Main page. Jewellery shop.</title>
+</head>
+<body class="page-body">
+  <div class="center-container">
+    <header class="page-header">
+      <div class="page-header__inner">
+        <div class="page-header__search-block">
+          <div class="page-header__search-inner">
+            <input id="search" type="text" placeholder="Type here to search">
+            <label class="visually-hidden" for="search">Search jewellerry</label>
+          </div>
+        </div>
+        <div class="page-header__logo">
+          <a href="main.html">
+            <svg>
+              <use xlink:href="img/svgsprite.svg#logo"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="page-header__login-block">
+          <p id="login"><a href="#">Login</a></p>
+          <p><a href="#">Cart 0</a></p>
+        </div>
+      </div>
+      <nav class="navigation">
+        <ul>
+          <li><a href="catalog.html">What’s new</a></li>
+          <li><a href="catalog.html">Chokers</a></li>
+          <li><a href="catalog.html">Necklaces</a></li>
+          <li><a href="catalog.html">Rings</a></li>
+          <li><a href="catalog.html">Earrings</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page-main">
+      <h1 class="visually-hidden">CH. Login form.</h1>
+      <section class="popup-login popup-login--shrink">
+          <div class="popup-login__inner">
+            <div class="popup-login__background">
+              <p><a href="main.html"></a></p>
+            </div>
+            <form id="popup-login-shape" class="popup-login__shape" action="#" method="post">
+              <div class="popup-login__shape-inner">
+                <fieldset class="popup-login__main-shape">
+                  <legend>Log In</legend>
+                  <div class="popup-login__enter-mail">
+                    <input id="input-popup-mail" type="email" placeholder="Your E-mail">
+                    <label class="visually-hidden" for="input-popup-mail">Enter E-mail</label>
+                  </div>
+                  <div class="popup-login__enter-password">
+                    <input id="popup-login-password" type="text" placeholder="Password">
+                    <label class="visually-hidden" for="popup-login-password">Enter password</label>
+                  </div>
+                  <div class="popup-login__forgot-password popup-login__forgot-password--margin">
+                    <p><a href="#">Forgot your password?</a></p>
+                  </div>
+                  <button type="submit">Log In</button>
+                  <div class="popup-login__sign-up">
+                    <p>Don’t have an account? <a href="#">Sign up</a></p>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
+          </div>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <div class="page-footer__inner">
+        <div class="sign-up">
+          <p>The good stuff in your inbox </p>
+          <p>News and updates from CH. No spam, we promise.</p>
+          <form id="shape" class="mail-shape" action="#" method="post">
+            <fieldset class="mail-shape__inner">
+              <legend class="visually-hidden">Sign up form</legend>
+              <div class="mail-shape__input-wrapper">
+                <input id="input-mail" type="text" name="mail" size="15" placeholder="Your E-mail">
+                <label class="visually-hidden" for="input-mail">Enter E-mail</label>
+              </div>
+              <button type="submit">Sign Up</button>
+            </fieldset>
+          </form>
+        </div>
+          <div class="additional-information">
+            <ul>
+              <li><a href="#">Ordering & Payment</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Returns & Exchanges</a></li>
+              <li><a href="#">Delivery</a></li>
+            </ul>
+          </div>
+          <div class="about-ch">
+            <ul>
+              <li><a href="#">About CH</a></li>
+              <li><a href="#">Stores & Hours</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        <div class="socials">
+          <p class="socials__facebook"><a href="https://www.facebook.com/">Facebook</a></p>
+          <p class="socials__instagram"><a href="https://www.instagram.com/">Instagram</a></p>
+          <p class="socials__pinterest"><a href="https://www.pinterest.com/">Pinterest</a></p>
+          <p class="socials__twitter"><a href="https://twitter.com/">Twitter</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+

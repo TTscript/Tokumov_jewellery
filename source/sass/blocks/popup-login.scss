@@ -20,6 +20,12 @@
   }
 }
 
+.popup-login--shrink {
+  position: unset;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
 .popup-login__inner {
   max-width: 430px;
   margin: 0 auto;
@@ -36,7 +42,7 @@
 
 .popup-login__background {
   position: relative;
-  background: url("../img/desktop/catalog/login-background.jpg") no-repeat;
+  background: $basic-brown url("../img/desktop/catalog/login-background.jpg") no-repeat;
   background-size: cover;
   min-height: 138px;
   margin: 0;
@@ -129,13 +135,16 @@
 
 .popup-login__main-shape input {
   border: 0;
+  border-bottom: 1px solid $basic-dark;
   background-color: transparent;
   min-width: 100%;
   margin: 0;
   padding: 0 0 9px;
 
   &:hover {
-    border: 1px solid $basic-dark;
+    border: 0;
+    outline: 1px solid $basic-dark;
+    margin-bottom: 1px;
   }
 
   &::placeholder {
@@ -147,9 +156,12 @@
 
 .popup-login__enter-mail {
   min-width: 100%;
-  border-bottom: 1px solid $basic-dark;
   margin: 0 0 34px;
   padding: 0;
+
+  &:hover {
+    border: 0;
+  }
 
   @media (max-width: $max-tablet) and (min-width: $min-tablet) {
     padding: 0 0 0 6px;
@@ -166,7 +178,6 @@
 
 .popup-login__enter-password {
   min-width: 100%;
-  border-bottom: 1px solid $basic-dark;
   margin: 0 0 5px;
   padding: 0;
 
@@ -199,6 +210,12 @@
 
   @media (max-width: 490px) {
     margin: 0 0 35px auto;
+  }
+}
+
+.popup-login__forgot-password--margin {
+  @media (max-width: $max-tablet) {
+    margin-bottom: 25px;
   }
 }
 

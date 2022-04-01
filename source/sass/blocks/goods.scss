@@ -6,7 +6,7 @@
   overflow: hidden;
   margin: 0 auto 52px;
   padding: 0;
-
+transition: 2s;
   @media (max-width: $max-tablet) {
     margin: 0 auto 43px;
   }
@@ -27,6 +27,7 @@
 
 .goods__inner {
   display: flex;
+  transition: 0.5s;
 }
 
 .goods__inner div:first-child h4 {

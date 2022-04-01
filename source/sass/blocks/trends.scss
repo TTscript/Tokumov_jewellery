@@ -5,11 +5,15 @@
   min-width: 570px;
   min-height: 630px;
   background: url("../img/desktop/main/blog/trends.jpg") no-repeat;
+  background-color: $basic-brown;
+  background-size: cover;
   margin: 0;
   padding: 0;
 
   @media (min-resolution: 2dppx) {
     background: url("../img/desktop/main/blog/trends@2x.jpg") no-repeat;
+    background-size: cover;
+
   }
 
   @media (max-width: $max-desktop) {
@@ -31,6 +35,8 @@
 .trends__picture {
   @media (max-width: $max-tablet) {
     background: url("../img/tablet/main/blog/trends.jpg") no-repeat;
+    background-size: cover;
+    background-color: $basic-brown;
     min-width: 339px;
     min-height: 300px;
     margin: 0;
@@ -38,6 +44,7 @@
 
     @media (min-resolution: 2dppx) {
       background: url("../img/tablet/main/blog/trends@2x.jpg") no-repeat;
+      background-size: cover;
     }
   }
 
@@ -47,11 +54,13 @@
 
   @media (max-width: 400px) {
     background: url("../img/mobile/main/blog/trends.jpg") no-repeat;
+    background-size: cover;
     min-width: 290px;
     min-height: 256px;
 
     @media (min-resolution: 2dppx) {
       background: url("../img/mobile/main/blog/trends@2x.jpg") no-repeat;
+      background-size: cover;
     }
   }
 }
@@ -65,6 +74,7 @@
   max-height: 300px;
   min-height: 300px;
   min-width: 285px;
+  max-width: 285px;
   margin: auto 0 0 auto;
   padding: 66px 60px 20px;
 

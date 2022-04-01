@@ -18,8 +18,11 @@
 .care-jewellery__picture {
   background: url("../img/desktop/main/blog/care-jewellery.jpg") no-repeat;
   background-size: cover;
+  background-color: $basic-brown;
   min-width: 285px;
   min-height: 300px;
+  max-width: 285px;
+  max-height: 300px;
 
   @media (max-width: $max-tablet) {
     background: url("../img/tablet/main/blog/care-jewellery.jpg") no-repeat;
@@ -46,6 +49,8 @@
   background-color: $basic-beige;
   min-width: 285px;
   min-height: 300px;
+  max-width: 285px;
+  max-height: 300px;
   margin: 0;
   padding: 66px 60px 20px;
 

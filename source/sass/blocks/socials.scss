@@ -1,5 +1,6 @@
 .socials {
   transform: translateX(9px);
+  max-width: 190px;
   margin: 0;
   padding: 0;
 
@@ -62,6 +63,9 @@
 }
 
 .socials__facebook a:hover {
+  color: $facebook;
+  transition: 0.2s;
+
   &::before {
     background-color: $facebook;
     transition: 0.2s;
@@ -69,6 +73,8 @@
 }
 
 .socials__facebook a:active {
+  opacity: 0.6;
+
   &::before {
     opacity: 0.6;
   }
@@ -78,18 +84,6 @@
   position: relative;
   margin: 0;
   padding: 10px 10px 10px 20px;
-
-  &:hover {
-    background-image: $instagram;
-    background-size: 100%;
-    background-clip: text;
-    color: transparent;
-    transition: 0.2s;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
 
   &::before {
     content: "";
@@ -120,18 +114,38 @@
   }
 }
 
+.socials__instagram a:hover {
+  background-image: $instagram;
+  background-size: 100%;
+  background-clip: text;
+  color: transparent;
+  transition: 0.2s;
+
+  &::before {
+    background-image: $instagram;
+    background-color: transparent;
+    transition: 0.2s;
+  }
+}
+
+.socials__instagram a:active {
+  opacity: 0.6;
+
+  &::before {
+    opacity: 0.6;
+  }
+}
+
 .socials__pinterest a {
   position: relative;
   margin: 0;
   padding: 10px 10px 10px 20px;
 
   &:hover {
-    color: $pinterest;
-    transition: 0.2s;
+
   }
 
   &:active {
-    opacity: 0.6;
   }
 
   &::before {
@@ -162,6 +176,25 @@
     font-size: 0;
   }
 }
+
+.socials__pinterest a:hover {
+  color: $pinterest;
+  transition: 0.2s;
+
+  &::before {
+    background-color: $pinterest;
+    transition: 0.2s;
+  }
+}
+
+.socials__pinterest a:active {
+  opacity: 0.6;
+
+  &::before {
+    opacity: 0.6;
+  }
+}
+
 
 .socials__twitter a {
   position: relative;
@@ -204,5 +237,23 @@
 
   @media (max-width: 600px) {
     font-size: 0;
+  }
+}
+
+.socials__twitter a:hover {
+  color: $twitter;
+  transition: 0.2s;
+
+  &::before {
+    background-color: $twitter;
+    transition: 0.2s;
+  }
+}
+
+.socials__twitter a:active {
+  opacity: 0.6;
+
+  &::before {
+    opacity: 0.6;
   }
 }

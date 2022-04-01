@@ -1,6 +1,5 @@
 /* eslint-disable no-inner-declarations */
-
-// if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
+// if (window.location.pathname === '/main.html') {
 if (window.location.pathname === '/Tokumov_jewellery/build/index.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
   ///////////////////////////////////////////////////////////////////SLIDER
   const goods = document.querySelector('.goods__inner');
@@ -336,7 +335,8 @@ if (window.location.pathname === '/Tokumov_jewellery/build/index.html' || window
   const filterButton = document.querySelector('#filter-button');
   const catalogWrapper = document.querySelector('.catalog__filter-wrapper');
   const filterBlock = document.querySelector('.filter');
-
+  const filterResetButton = document.querySelector('#filter-reset');
+  const checkboxes = Array.from(filterBlock.querySelectorAll('input'));
   const isEscFilterEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
   function installFilter() {
@@ -380,6 +380,14 @@ if (window.location.pathname === '/Tokumov_jewellery/build/index.html' || window
   }
 
   filterButton.addEventListener('click', installFilter);
+  filterResetButton.addEventListener('click', () => {
+    checkboxes.forEach((item) => {
+      item.checked = false;
+      filterBlock.querySelector('#necklaces').checked = true;
+      filterBlock.querySelector('#rings').checked = true;
+      filterBlock.querySelector('#earrings').checked = true;
+    });
+  });
 
   ////////////////////////////////////////FILTER
 
@@ -400,7 +408,7 @@ const loginPopup = document.querySelector('#popup-login').content.querySelector(
 const login = document.querySelector('#login a');
 const bodyTag = document.querySelector('.page-body');
 const loginCloseButton = loginPopup.querySelector('.popup-login__background button');
-
+const inputMailLogin = loginPopup.querySelector('#input-popup-mail');
 const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
 const createLoginPopup = () => {
@@ -434,8 +442,10 @@ const closePopup = () => {
   window.addEventListener('click', closePopupOverlay);
 };
 
-function install() {
+function install(e) {
+  e.preventDefault();
   createLoginPopup();
+  inputMailLogin.focus();
   setTimeout(() => {
     closePopup();
   }, 250);
@@ -577,5 +587,9 @@ burgerButton.addEventListener('click', () => {
     });
   });
 });
+
+const burgerLogin = burgerOpen.querySelector('#burger-login');
+
+burgerLogin.addEventListener('click', install);
 
 //////////////////////////////////////// BURGER MENU
