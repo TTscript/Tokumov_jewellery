@@ -1,6 +1,6 @@
 /* eslint-disable no-inner-declarations */
 // if (window.location.pathname === '/main.html') {
-if (window.location.pathname === '/Tokumov_jewellery/build/index.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
+if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
   ///////////////////////////////////////////////////////////////////SLIDER
   const goods = document.querySelector('.goods__inner');
   const paginationDesktopNumbers = document.querySelectorAll('.pagination__desktop button');
