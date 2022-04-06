@@ -105,10 +105,7 @@
 }
 
 .popup-login__main-shape {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  display: block;
   border: 0;
   margin: 0;
   padding: 0 45px;
@@ -196,6 +193,7 @@
 
 .popup-login__forgot-password {
   transition: 0.2s;
+  text-align: right;
   margin: 0 0 45px auto;
 
   &:hover {
@@ -204,7 +202,7 @@
   }
 
   @media (max-width: $max-tablet) {
-    margin: 0 7px 0 auto;
+    margin: 0 7px 35px auto;
     padding: 0;
   }
 
@@ -260,6 +258,7 @@
 }
 
 .popup-login__sign-up {
+  text-align: right;
   margin-bottom: 54px;
 
   @media (max-width: 490px) {

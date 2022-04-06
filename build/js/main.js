@@ -12,7 +12,8 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
   const images = goods.querySelectorAll('img');
   const mediaQueryOther = window.matchMedia('(min-width: 1367px)');
   const mediaQueryDesktop = window.matchMedia('(min-width: 1024px) and (max-width: 1200px)');
-  const mediaQueryTablet = window.matchMedia('(max-width: 1023px)');
+  const mediaQueryTablet = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
+  const mediaQueryMobile = window.matchMedia('(min-width: 320px)');
 
   //PAGINATION COLORS
 
@@ -89,6 +90,13 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
         item.style.width = `${width / 3.1}px`;
         item.style.height = 'auto';
       });
+    } else if (mediaQueryMobile.matches) {
+      width = goodsWrapper.offsetWidth;
+      goods.style.width = `${width * images.length}px`;
+      images.forEach((item) => {
+        item.style.width = `${width / 2.4}px`;
+        item.style.height = 'auto';
+      });
     }
   });
 
@@ -117,7 +125,6 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
     rightArrow.addEventListener('click', () => {
       rightArrowNum = rightArrowNum + sizes;
       const goodsStyles = getComputedStyle(goods).transform;
-
 
       if (rightArrowNum > (screen.length - 1) * sizes) {
         rightArrowNum = 0;
