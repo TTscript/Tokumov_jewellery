@@ -29,6 +29,13 @@
   margin: 0;
   padding: 6px 0 0;
 
+  &:focus {
+    outline: 1px solid $basic-white;
+    border: 2px solid $basic-dark;
+    border-radius: 5px;
+    margin: -2px;
+  }
+
   &:hover {
     transform: scale(1.1);
     transition: 0.2s;

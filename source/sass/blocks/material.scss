@@ -16,7 +16,7 @@
   margin: 0;
   padding: 25px 0 20px 25px;
 
-  @media (max-width: $intermediate-tablet) {
+  @media (max-width: $max-tablet) {
     font-size: 18px;
     line-height: 23px;
     padding: 34px 0 33px 31px;
@@ -43,7 +43,7 @@
     height: 8px;
     transform: rotate(180deg);
 
-    @media (max-width: $intermediate-tablet) {
+    @media (max-width: $max-tablet) {
       top: 41px;
       right: 40px;
       width: 23px;
@@ -79,12 +79,12 @@
   &:last-child {
     margin-bottom: 23px;
 
-    @media (max-width: $intermediate-tablet) {
+    @media (max-width: $max-tablet) {
       margin-bottom: 35px;
     }
   }
 
-  @media (max-width: $intermediate-tablet) {
+  @media (max-width: $max-tablet) {
     margin: 0 0 15px;
   }
 }
@@ -94,7 +94,7 @@
   line-height: 18px;
   margin: 0;
 
-  @media (max-width: $intermediate-tablet) {
+  @media (max-width: $max-tablet) {
     font-size: 16px;
     line-height: 21px;
   }

@@ -1,6 +1,6 @@
 /* eslint-disable no-inner-declarations */
-// if (window.location.pathname === '/main.html') {
-if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
+if (window.location.pathname === '/main.html') {
+// if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
   ///////////////////////////////////////////////////////////////////SLIDER
   const goods = document.querySelector('.goods__inner');
   const paginationDesktopNumbers = document.querySelectorAll('.pagination__desktop button');
@@ -10,7 +10,8 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
   const goodsWrapper = document.querySelector('.new-entries');
 
   const images = goods.querySelectorAll('img');
-  const mediaQueryDesktop = window.matchMedia('(min-width: 1024px)');
+  const mediaQueryOther = window.matchMedia('(min-width: 1367px)');
+  const mediaQueryDesktop = window.matchMedia('(min-width: 1024px) and (max-width: 1200px)');
   const mediaQueryTablet = window.matchMedia('(max-width: 1023px)');
 
   //PAGINATION COLORS
@@ -61,7 +62,12 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
   let width;
 
   window.addEventListener('resize', () => {
-    if (mediaQueryDesktop.matches) {
+    if (mediaQueryOther.matches) {
+      images.forEach((item) => {
+        item.style.width = '270px';
+        item.style.height = 'auto';
+      });
+    } else if (mediaQueryDesktop.matches) {
       moveArrowsDesktopSlider(paginationDesktopNumbers, 1200);
       pagination(desktopFigures, 'desktop');
       swipeFigures(paginationDesktopNumbers);
@@ -69,7 +75,7 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
       width = goodsWrapper.offsetWidth;
       goods.style.width = `${width * images.length}px`;
       images.forEach((item) => {
-        item.style.width = `${width / 4.8}px`;
+        item.style.width = `${width / 4.5}px`;
         item.style.height = 'auto';
       });
     } else if (mediaQueryTablet.matches) {
@@ -80,7 +86,7 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
       width = goodsWrapper.offsetWidth;
       goods.style.width = `${width * images.length}px`;
       images.forEach((item) => {
-        item.style.width = `${width / 3.19}px`;
+        item.style.width = `${width / 3.1}px`;
         item.style.height = 'auto';
       });
     }
@@ -200,6 +206,9 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
     swipeFigures(paginationTabletNumbers, 707);
   }
 
+  window.addEventListener('pointerup', (e) => {
+    console.log('down');
+  });
 
   //////////////////////////////////////////////////////////SLIDER
 
@@ -276,6 +285,9 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
   }));
 
   askedQuestion.forEach((item) => item.addEventListener('keydown', (e) => {
+    if(e.key === ' ') {
+      e.preventDefault();
+    }
     if (e.key === ' ' || e.key === 'Enter') {
       item.querySelector('p').classList.toggle('asked-questions__block--appear');
       item.classList.toggle('asked-questions__block--rotate-arrow');
@@ -284,8 +296,8 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
 
   ///////////////////////////////////////////////////ACORDION
 
-// } else if (window.location.pathname === '/catalog.html') {
-} else if (window.location.pathname === '/Tokumov_jewellery/build/catalog.html') {
+} else if (window.location.pathname === '/catalog.html') {
+// } else if (window.location.pathname === '/Tokumov_jewellery/build/catalog.html') {
 
   ////////////////////////////////////////FILTER
   const filter = document.querySelector('.filter__inner');
@@ -409,6 +421,7 @@ const login = document.querySelector('#login a');
 const bodyTag = document.querySelector('.page-body');
 const loginCloseButton = loginPopup.querySelector('.popup-login__background button');
 const inputMailLogin = loginPopup.querySelector('#input-popup-mail');
+const cart = document.querySelector('#cart a');
 const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
 const createLoginPopup = () => {
@@ -452,6 +465,7 @@ function install(e) {
 }
 
 login.addEventListener('click', install);
+cart.addEventListener('click', install);
 
 /////////////////////////////////////////////////LOGIN
 
@@ -464,6 +478,7 @@ const loginTemplate = document.querySelector('#popup-login')
 const loginShape = loginTemplate.querySelector('#popup-login-shape');
 const loginWrapper = document.querySelector('#popup-login')
   .content.querySelector('.popup-login__enter-mail');
+const passwordWrapper = loginTemplate.querySelector('.popup-login__enter-password');
 
 function validateName(mail) {
   const re =/\S+@\S+\.\S+/;
@@ -490,6 +505,7 @@ mailShape.onsubmit = function() {
 
 loginShape.onsubmit = function() {
   const popupMail = document.querySelector('#input-popup-mail').value;
+  const popupPassword = document.querySelector('#popup-login-password').value;
 
   if (popupMail === '') {
     loginWrapper.classList.add('popup-login__error');
@@ -503,6 +519,13 @@ loginShape.onsubmit = function() {
     return false;
   } else {
     loginWrapper.classList.remove('popup-login__error');
+  }
+
+  if (popupPassword === '' || popupPassword.length <= 4) {
+    passwordWrapper.classList.add('popup-login__error');
+    return false;
+  } else {
+    passwordWrapper.classList.remove('popup-login__error');
   }
 };
 
@@ -535,6 +558,7 @@ const centerContainer = document.querySelector('.center-container');
 const logo = document.querySelector('.page-header__logo');
 const loginBlock = document.querySelector('.page-header__login-block');
 const burgerButton = document.querySelector('.burger-closed').querySelector('button');
+const pageHeader = document.querySelector('.page-header');
 
 let menuOpen = false;
 
@@ -558,8 +582,31 @@ navItemArray.forEach((item) => {
 });
 
 burgerOpen.classList.add('burger-open__action');
+const burgerList = document.querySelector('.burger-open__list');
 
 burgerButton.addEventListener('click', () => {
+  openBurger();
+
+  setTimeout(() => {
+    if (burgerList.offsetHeight >= 780) {
+      burgerList.style.overflow = 'scroll';
+    } else {
+      burgerList.style.overflow = 'unset';
+    }
+  }, 50);
+
+  burgerList.addEventListener('DOMNodeInserted', () => {
+    if (burgerList.offsetHeight >= 780) {
+      burgerList.style.overflow = 'scroll';
+    }
+  });
+
+  burgerList.addEventListener('DOMNodeRemoved', () => {
+    if (burgerList.offsetHeight < 780) {
+      burgerList.style.overflow = 'unset';
+    }
+  });
+
   menuOpen = !menuOpen;
 
   if (menuOpen) {
@@ -593,3 +640,25 @@ const burgerLogin = burgerOpen.querySelector('#burger-login');
 burgerLogin.addEventListener('click', install);
 
 //////////////////////////////////////// BURGER MENU
+function openBurger() {
+  burgerOpen.addEventListener('keydown', trapTabKey);
+  burgerButton.focus();
+
+  function trapTabKey(e) {
+    pageHeader.addEventListener('keydown', () => {
+      if (e.code === 'Tab') {
+        if (e.shiftKey && document.activeElement === burgerButton) {
+          e.preventDefault();
+          setTimeout(() => {
+            login.focus();
+          }, 1);
+        } else if (document.activeElement === login) {
+          e.preventDefault();
+          setTimeout(() => {
+            burgerButton.focus();
+          }, 1);
+        }
+      }
+    });
+  }
+}

@@ -17,6 +17,10 @@
   margin: 0;
   padding: 0;
 
+  @media (min-width: $max-tablet) and (max-width: 1260px) {
+    max-width: 660px;
+  }
+
   @media (max-width: $max-mobile) {
     row-gap: 25px;
   }

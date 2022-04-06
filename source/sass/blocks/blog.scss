@@ -70,9 +70,10 @@
 
   @media (max-width: $max-tablet) {
     margin: 0;
+    max-width: 639px;
   }
 
-  @media (max-width: $max-tablet) {
-    max-width: 639px;
+  @media (max-width: 640px) {
+    min-width: 100%;
   }
 }

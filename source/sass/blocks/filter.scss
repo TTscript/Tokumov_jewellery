@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
 
-  @media (max-width: $intermediate-tablet) {
+  @media (max-width: $max-tablet) {
     transform: translateX(-10px);
     display: none;
     max-width: 432px;
@@ -33,7 +33,7 @@
   margin: 0 0 35px 0;
   padding: 0;
 
-  @media (max-width: $intermediate-tablet) {
+  @media (max-width: $max-tablet) {
     border: 0;
     max-width: unset;
   }
@@ -46,7 +46,7 @@
 .filter__inner .filter__close-button {
   display: none;
 
-  @media (max-width: $intermediate-tablet) {
+  @media (max-width: $max-tablet) {
     position: absolute;
     top: -12px;
     right: -16px;
@@ -123,7 +123,7 @@
     color: $basic-white;
   }
 
-  @media (max-width: $intermediate-tablet) {
+  @media (max-width: $max-tablet) {
     display: block;
     transform: translateX(30px);
     min-width: 364px;
@@ -159,7 +159,7 @@
     background-color: transparent;
   }
 
-  @media (max-width: $intermediate-tablet) {
+  @media (max-width: $max-tablet) {
     display: block;
     transform: translateX(30px);
     min-width: 364px;

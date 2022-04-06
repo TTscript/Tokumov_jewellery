@@ -11,6 +11,7 @@
 
   @media (max-width: 600px) {
     display: flex;
+    transform: unset;
   }
 }
 
@@ -51,6 +52,8 @@
     padding: 0;
 
     @media (max-width: 600px) {
+      top: 6px;
+      left: 4px;
       background-size: 12px 21px;
       width: 12px;
       height: 21px;
@@ -59,6 +62,7 @@
 
   @media (max-width: 600px) {
     font-size: 0;
+    padding: 18px;
   }
 }
 
@@ -77,6 +81,12 @@
 
   &::before {
     opacity: 0.6;
+  }
+}
+
+.socials .socials__instagram {
+  @media (max-width: 600px) {
+    margin-right: 16px;
   }
 }
 
@@ -102,6 +112,8 @@
     padding: 0;
 
     @media (max-width: 600px) {
+      top: 6px;
+      left: 3px;
       background-size: 20px 21px;
       width: 20px;
       height: 21px;
@@ -111,6 +123,7 @@
 
   @media (max-width: 600px) {
     font-size: 0;
+    padding: 18px;
   }
 }
 
@@ -136,17 +149,16 @@
   }
 }
 
+.socials .socials__pinterest {
+  @media (max-width: 600px) {
+    margin-right: 14px;
+  }
+}
+
 .socials__pinterest a {
   position: relative;
   margin: 0;
   padding: 10px 10px 10px 20px;
-
-  &:hover {
-
-  }
-
-  &:active {
-  }
 
   &::before {
     content: "";
@@ -165,15 +177,17 @@
     padding: 0;
 
     @media (max-width: 600px) {
+      top: 6px;
+      left: 6px;
       background-size: 20px 21px;
       width: 20px;
       height: 21px;
-      left: 27px;
     }
   }
 
   @media (max-width: 600px) {
     font-size: 0;
+    padding: 18px;
   }
 }
 
@@ -227,16 +241,17 @@
     padding: 0;
 
     @media (max-width: 600px) {
+      top: 6px;
+      left: 6px;
       background-size: 20px 18px;
       width: 20px;
       height: 18px;
-      top: 18px;
-      left: 46px;
     }
   }
 
   @media (max-width: 600px) {
     font-size: 0;
+    padding: 18px;
   }
 }
 

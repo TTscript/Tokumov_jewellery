@@ -9,7 +9,7 @@
     margin: 0 0 50px;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 640px) {
     flex-direction: column;
     margin: 0 0 41px;
   }
@@ -46,12 +46,12 @@
     min-width: calc(100vw - 400px);
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 640px) {
     background: url("../img/mobile/main/blog/crystals.jpg") no-repeat;
     background-size: cover;
     order: unset;
-    min-width: 290px;
     min-height: 256px;
+    min-width: 100%;
 
     @media (min-resolution: 2dppx) {
       background: url("../img/mobile/main/blog/crystals@2x.jpg") no-repeat;
@@ -69,7 +69,6 @@
   min-width: 285px;
   min-height: 300px;
   max-width: 285px;
-  max-height: 300px;
   margin: 0;
   padding: 66px 60px 20px;
 
@@ -78,10 +77,14 @@
     min-height: 300px;
   }
 
-  @media (max-width: 400px) {
-    min-width: 290px;
+  @media (max-width: 738px) {
+    min-width: 200px;
+  }
+
+  @media (max-width: 640px) {
     min-height: 256px;
     padding: 44px 60px 20px;
+    min-width: 100%;
   }
 }
 

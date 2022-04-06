@@ -158,6 +158,13 @@
 .page-header__login-block a {
   color: $basic-dark;
 
+  &:focus {
+    outline: 1px solid $basic-white;
+    border: 2px solid $basic-dark;
+    border-radius: 5px;
+    margin: -2px;
+  }
+
   &:hover {
     color: $basic-brown;
     transition: 0.2s;

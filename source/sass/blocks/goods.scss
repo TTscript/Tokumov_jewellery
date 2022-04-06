@@ -6,7 +6,7 @@
   overflow: hidden;
   margin: 0 auto 52px;
   padding: 0;
-transition: 2s;
+  transition: 2s;
   @media (max-width: $max-tablet) {
     margin: 0 auto 43px;
   }
@@ -54,15 +54,6 @@ transition: 2s;
 .goods__card img {
   margin: 0 0 19px;
   padding: 0;
-
-  &:hover {
-    transition: 0.2s;
-    box-shadow: 2px 2px 10px 0 $basic-dark;
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
 
   @media (max-width: $max-tablet) {
     width: 324px;
