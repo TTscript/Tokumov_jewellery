@@ -1,6 +1,6 @@
 /* eslint-disable no-inner-declarations */
-if (window.location.pathname === '/main.html') {
-// if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
+// if (window.location.pathname === '/main.html') {
+if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
   ///////////////////////////////////////////////////////////////////SLIDER
   const goods = document.querySelector('.goods__inner');
   const paginationDesktopNumbers = document.querySelectorAll('.pagination__desktop button');
@@ -206,10 +206,6 @@ if (window.location.pathname === '/main.html') {
     swipeFigures(paginationTabletNumbers, 707);
   }
 
-  window.addEventListener('pointerup', (e) => {
-    console.log('down');
-  });
-
   //////////////////////////////////////////////////////////SLIDER
 
   ///////////////////////////////////////////////////////////////SWIPER
@@ -296,8 +292,8 @@ if (window.location.pathname === '/main.html') {
 
   ///////////////////////////////////////////////////ACORDION
 
-} else if (window.location.pathname === '/catalog.html') {
-// } else if (window.location.pathname === '/Tokumov_jewellery/build/catalog.html') {
+// } else if (window.location.pathname === '/catalog.html') {
+} else if (window.location.pathname === '/Tokumov_jewellery/build/catalog.html') {
 
   ////////////////////////////////////////FILTER
   const filter = document.querySelector('.filter__inner');
