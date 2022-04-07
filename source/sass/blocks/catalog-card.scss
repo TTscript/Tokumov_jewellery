@@ -16,12 +16,13 @@
     }
 
     &:nth-child(2n) {
-      margin: 0;
+      margin: 0 0 25px 0;
     }
   }
 
   @media (max-width: 460px) {
     max-width: 130px;
+    margin-bottom: 25px;
   }
 }
 
