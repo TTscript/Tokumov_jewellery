@@ -590,8 +590,6 @@ const loginBlock = document.querySelector('.page-header__login-block');
 const burgerButton = document.querySelector('.burger-closed').querySelector('button');
 const burgerOpenPanel = document.querySelector('.burger-open__panel');
 
-let menuOpen = false;
-
 function noScroll() {
   window.scrollTo(0, 0);
 }
@@ -637,15 +635,8 @@ burgerButton.addEventListener('click', () => {
     }
   });
 
-  menuOpen = !menuOpen;
-
-  if (menuOpen) {
-    window.addEventListener('scroll', noScroll);
-    burgerOpenList.addEventListener('change', checkHeight);
-  } else {
-    window.removeEventListener('scroll', noScroll);
-    burgerOpenList.removeEventListener('change', checkHeight);
-  }
+  window.addEventListener('scroll', noScroll);
+  burgerOpenList.addEventListener('change', checkHeight);
 
   loginBlock.classList.add('page-header__login-block--change-bag');
   logo.classList.add('page-header__logo--change-color');
@@ -660,6 +651,8 @@ burgerButton.addEventListener('click', () => {
 });
 
 burgerOpenPanel.addEventListener('click', () => {
+  window.removeEventListener('scroll', noScroll);
+  burgerOpenList.removeEventListener('change', checkHeight);
   burgerOpen.classList.add('burger-open__action');
   loginBlock.classList.remove('page-header__login-block--change-bag');
   logo.classList.remove('page-header__logo--change-color');
