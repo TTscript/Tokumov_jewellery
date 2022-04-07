@@ -637,14 +637,11 @@ burgerButton.addEventListener('click', () => {
     }
   });
 
-  menuOpen = !menuOpen;
+  menuOpen = true;
 
   if (menuOpen) {
     window.addEventListener('scroll', noScroll);
     burgerOpenList.addEventListener('change', checkHeight);
-  } else {
-    window.removeEventListener('scroll', noScroll);
-    burgerOpenList.removeEventListener('change', checkHeight);
   }
 
   loginBlock.classList.add('page-header__login-block--change-bag');
@@ -660,6 +657,8 @@ burgerButton.addEventListener('click', () => {
 });
 
 burgerOpenPanel.addEventListener('click', () => {
+  window.removeEventListener('scroll', noScroll);
+  burgerOpenList.removeEventListener('change', checkHeight);
   burgerOpen.classList.add('burger-open__action');
   loginBlock.classList.remove('page-header__login-block--change-bag');
   logo.classList.remove('page-header__logo--change-color');
