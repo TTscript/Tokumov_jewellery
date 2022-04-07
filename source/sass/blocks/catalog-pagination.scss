@@ -17,6 +17,10 @@
   margin: 0;
   padding: 0;
 
+  @media (max-width: 1260px) {
+    column-gap: 221px;
+  }
+
   @media (max-width: $max-tablet) {
     column-gap: 235px;
   }
