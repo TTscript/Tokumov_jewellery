@@ -1,7 +1,6 @@
 .care-jewellery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin: 0 0 30px;
   padding: 0;
 
@@ -10,6 +9,9 @@
   }
 
   @media (max-width: 640px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     margin: 0 0 40px;
   }
@@ -21,11 +23,10 @@
   background-color: $basic-brown;
   min-width: 285px;
   min-height: 300px;
-  max-width: 285px;
-  max-height: 300px;
 
   @media (max-width: $max-tablet) {
     background: url("../img/tablet/main/blog/care-jewellery.jpg") no-repeat;
+    background-size: cover;
     min-width: 339px;
     min-height: 300px;
   }
@@ -60,14 +61,13 @@
   }
 
   @media (max-width: 738px) {
-    min-width: 200px;
     max-width: 258px;
+    min-width: 100%;
   }
 
   @media (max-width: 640px) {
     min-height: 256px;
     padding: 44px 60px 20px;
-    min-width: 100%;
   }
 }
 

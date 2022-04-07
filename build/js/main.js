@@ -3,6 +3,7 @@
 if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
   ///////////////////////////////////////////////////////////////////SLIDER
   const goods = document.querySelector('.goods__inner');
+  const goodsCards = document.querySelectorAll('.goods__card');
   const paginationDesktopNumbers = document.querySelectorAll('.pagination__desktop button');
   const paginationTabletNumbers = document.querySelectorAll('.pagination__tablet button');
   const leftArrow = document.querySelector('.new-entries__left-arrow');
@@ -10,10 +11,12 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
   const goodsWrapper = document.querySelector('.new-entries');
 
   const images = goods.querySelectorAll('img');
-  const mediaQueryOther = window.matchMedia('(min-width: 1367px)');
+  const mediaQueryOther = window.matchMedia('(min-width: 1201px)');
   const mediaQueryDesktop = window.matchMedia('(min-width: 1024px) and (max-width: 1200px)');
   const mediaQueryTablet = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
-  const mediaQueryMobile = window.matchMedia('(min-width: 320px)');
+  const mediaQueryPreMobile = window.matchMedia('(min-width: 500px) and (max-width: 767px)');
+  const mediaQueryMobile = window.matchMedia('(max-width: 499px)');
+
 
   //PAGINATION COLORS
 
@@ -62,19 +65,24 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
   let rightArrowNum = 0;
   let width;
 
-  window.addEventListener('resize', () => {
+  function changeImagesSize() {
+    moveArrowsDesktopSlider(paginationDesktopNumbers, 1200);
+    pagination(desktopFigures, 'desktop');
+    swipeFigures(paginationDesktopNumbers, 1200);
+
     if (mediaQueryOther.matches) {
       images.forEach((item) => {
         item.style.width = '270px';
         item.style.height = 'auto';
       });
     } else if (mediaQueryDesktop.matches) {
-      moveArrowsDesktopSlider(paginationDesktopNumbers, 1200);
-      pagination(desktopFigures, 'desktop');
-      swipeFigures(paginationDesktopNumbers);
-
       width = goodsWrapper.offsetWidth;
       goods.style.width = `${width * images.length}px`;
+
+      goodsCards.forEach((item) => {
+        item.style.maxWidth = `${width / 4.5}px`;
+      });
+
       images.forEach((item) => {
         item.style.width = `${width / 4.5}px`;
         item.style.height = 'auto';
@@ -84,25 +92,58 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
       pagination(tabletFigures, 'tablet');
       swipeFigures(paginationTabletNumbers, 707);
 
+      goodsCards.forEach((item) => {
+        item.style.maxWidth = '324px';
+      });
+
+      images.forEach((item) => {
+        item.style.width = '324px';
+        item.style.height = 'auto';
+      });
+    } else if (mediaQueryPreMobile.matches) {
+      moveArrowsTabletSlider(paginationTabletNumbers, 707);
+      pagination(tabletFigures, 'tablet');
+      swipeFigures(paginationTabletNumbers, 707);
+
       width = goodsWrapper.offsetWidth;
       goods.style.width = `${width * images.length}px`;
+
+      goodsCards.forEach((item) => {
+        item.style.maxWidth = `${width / 2.3}px`;
+      });
+
       images.forEach((item) => {
-        item.style.width = `${width / 3.1}px`;
+        item.style.width = `${width / 2.3}px`;
         item.style.height = 'auto';
       });
     } else if (mediaQueryMobile.matches) {
       width = goodsWrapper.offsetWidth;
       goods.style.width = `${width * images.length}px`;
+
+      goodsCards.forEach((item) => {
+        item.style.maxWidth = `${width / 2.5}px`;
+      });
+
       images.forEach((item) => {
-        item.style.width = `${width / 2.4}px`;
+        item.style.width = `${width / 2.5}px`;
         item.style.height = 'auto';
       });
     }
-  });
+  }
 
+  changeImagesSize();
+
+  window.addEventListener('resize', () => {
+    setTimeout(() => {
+      goods.style.transform = 'translate(0)';
+    }, 500);
+
+    changeImagesSize();
+  });
 
   function moveArrowsDesktopSlider(screen, sizes) {
     leftArrow.addEventListener('click', () => {
+
       leftArrowNum = leftArrowNum - sizes;
 
       function getGoodsStyles() {
@@ -124,13 +165,15 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
 
     rightArrow.addEventListener('click', () => {
       rightArrowNum = rightArrowNum + sizes;
-      const goodsStyles = getComputedStyle(goods).transform;
+      function getGoodsStyles() {
+        return getComputedStyle(goods).transform;
+      }
 
       if (rightArrowNum > (screen.length - 1) * sizes) {
         rightArrowNum = 0;
-      } else if (numberTwo && goodsStyles === 'matrix(1, 0, 0, 1, -1200, 0)') {
+      } else if (numberTwo && getGoodsStyles() === 'matrix(1, 0, 0, 1, -1200, 0)') {
         rightArrowNum = 2400;
-      } else if (numberTwo && goodsStyles === 'matrix(1, 0, 0, 1, 0, 0)') {
+      } else if (numberTwo && getGoodsStyles() === 'matrix(1, 0, 0, 1, 0, 0)') {
         rightArrowNum = 1200;
       }
 
@@ -149,12 +192,12 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
 
       if (leftArrowNum < 0 && !numberTwo) {
         leftArrowNum = (screen.length - 1) * sizes;
-      } else if (numberTwo && leftArrowNum < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, -1200, 0)') {
+      } else if (numberTwo && leftArrowNum < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, -707, 0)') {
         leftArrowNum = 0;
       } else if (numberTwo && leftArrowNum < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, 0, 0)') {
         leftArrowNum = (screen.length - 1) * sizes;
-      } else if (numberThree && leftArrow < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, -2400, 0)') {
-        leftArrowNum = -1200;
+      } else if (numberThree && leftArrow < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, -1414, 0)') {
+        leftArrowNum = -707;
       }
 
       goods.style.transform = `translateX(-${(leftArrowNum)}px)`;
@@ -200,19 +243,6 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
       });
     });
   }
-
-  swipeFigures(paginationTabletNumbers);
-
-  if (mediaQueryDesktop.matches) {
-    moveArrowsDesktopSlider(paginationDesktopNumbers, 1200);
-    pagination(desktopFigures, 'desktop');
-    swipeFigures(paginationDesktopNumbers, 1200);
-  } else if (mediaQueryTablet.matches) {
-    moveArrowsTabletSlider(paginationTabletNumbers, 707);
-    pagination(tabletFigures, 'tablet');
-    swipeFigures(paginationTabletNumbers, 707);
-  }
-
   //////////////////////////////////////////////////////////SLIDER
 
   ///////////////////////////////////////////////////////////////SWIPER
@@ -273,7 +303,7 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
   }
 
   function setStylePosition() {
-    galleryLine.style.transform = `translate3d(${x}px, 0, 0)`;
+    galleryLine.style.transform = `translate3d(${x * 22}px, 0, 0)`;
   }
 
   ///////////////////////////////////////////////////ACORDION
@@ -549,9 +579,6 @@ loginShape.addEventListener('submit', () => {
 
 const burgerClosed = document.querySelector('.burger-closed');
 const burgerOpen = document.querySelector('.burger-open');
-const burgerTop = document.querySelector('.burger-closed__top-line');
-const burgerBottom = document.querySelector('.burger-closed__bottom-line');
-const burgerMiddle = document.querySelector('.burger-closed__middle-line');
 const navigationItem = document.querySelectorAll('.page-header__navigation-item');
 const navItemArray = Array.from(navigationItem);
 const burgerOpenList = document.querySelector('.burger-open__list');
@@ -561,7 +588,7 @@ const centerContainer = document.querySelector('.center-container');
 const logo = document.querySelector('.page-header__logo');
 const loginBlock = document.querySelector('.page-header__login-block');
 const burgerButton = document.querySelector('.burger-closed').querySelector('button');
-const pageHeader = document.querySelector('.page-header');
+const burgerOpenPanel = document.querySelector('.burger-open__panel');
 
 let menuOpen = false;
 
@@ -620,22 +647,22 @@ burgerButton.addEventListener('click', () => {
     burgerOpenList.removeEventListener('change', checkHeight);
   }
 
-  burgerClosed.classList.toggle('burger-closed--change-color');
-  loginBlock.classList.toggle('page-header__login-block--change-bag');
-  logo.classList.toggle('page-header__logo--change-color');
-  burgerOpen.classList.toggle('burger-open__action');
-  burgerClosed.classList.toggle('burger-closed--background-color');
+  loginBlock.classList.add('page-header__login-block--change-bag');
+  logo.classList.add('page-header__logo--change-color');
+  burgerOpen.classList.remove('burger-open__action');
 
   burgerMenuItems.forEach((item) => {
     item.addEventListener('click', () => {
       centerContainer.classList.remove('center-container--fixed');
-      burgerOpen.classList.add('burger-open__action');
-      burgerTop.classList.remove('burger-closed__top-line--transform');
-      burgerBottom.classList.remove('burger-closed__bottom-line--transform');
-      burgerMiddle.classList.remove('visually-hidden');
       burgerClosed.classList.remove('burger-closed--background-color');
     });
   });
+});
+
+burgerOpenPanel.addEventListener('click', () => {
+  burgerOpen.classList.add('burger-open__action');
+  loginBlock.classList.remove('page-header__login-block--change-bag');
+  logo.classList.remove('page-header__logo--change-color');
 });
 
 const burgerLogin = burgerOpen.querySelector('#burger-login');
@@ -643,25 +670,24 @@ const burgerLogin = burgerOpen.querySelector('#burger-login');
 burgerLogin.addEventListener('click', install);
 
 //////////////////////////////////////// BURGER MENU
+
+const burgerOpenButton = document.querySelector('#burger-open');
+
 function openBurger() {
   burgerOpen.addEventListener('keydown', trapTabKey);
   burgerButton.focus();
 
   function trapTabKey(e) {
-    pageHeader.addEventListener('keydown', () => {
-      if (e.code === 'Tab') {
-        if (e.shiftKey && document.activeElement === burgerButton) {
-          e.preventDefault();
-          setTimeout(() => {
-            login.focus();
-          }, 1);
-        } else if (document.activeElement === login) {
-          e.preventDefault();
-          setTimeout(() => {
-            burgerButton.focus();
-          }, 1);
-        }
-      }
-    });
+    if (document.activeElement === burgerOpenButton && e.shiftKey && e.code === 'Tab') {
+      e.preventDefault();
+      setTimeout(() => {
+        burgerLogin.focus();
+      }, 50);
+    } else if (document.activeElement === burgerLogin && e.code === 'Tab' && !e.shiftKey) {
+      e.preventDefault();
+      setTimeout(() => {
+        burgerButton.focus();
+      }, 50);
+    }
   }
 }

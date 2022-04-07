@@ -15,12 +15,90 @@
 
 .burger-open--appear {
   display: block;
-  padding: 135px 45px 0;
+  padding: 47px 45px 0 47px;
 
   @media (max-width: $max-mobile) {
-    padding: 135px 15px 0;
+    padding: 31px 15px 0;
   }
 }
+
+.burger-open__panel {
+  display: none;
+  cursor: pointer;
+  transition: 1s all;
+
+  @media (max-width: $max-tablet) {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    min-width: 25px;
+    min-height: 16px;
+    background-color: transparent;
+    margin-bottom: 57px;
+    padding: 0;
+  }
+
+  @media (max-width: $max-mobile) {
+    min-width: 25px;
+    min-height: 16px;
+    margin-bottom: 39px;
+  }
+}
+
+.burger-open__panel button {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 6px 0 0;
+
+  &:focus {
+    outline: 1px solid $basic-white;
+    border: 2px solid $basic-dark;
+    border-radius: 5px;
+    margin: -2px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    border-bottom: 2px solid $basic-white;
+    width: 23px;
+    padding: 0;
+    margin: 0 0 7px 0;
+    transition: 1s;
+  }
+}
+
+
+.burger-open__panel span {
+  &::before {
+    content: "";
+    display: block;
+    border-bottom: 2px solid $basic-white;
+    width: 23px;
+    padding: 0;
+    margin: 0 0 7px 0;
+    transition: 1s;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid $basic-white;
+    width: 23px;
+    padding: 0;
+    margin: 0 0 7px 0;
+    transition: 1s;
+  }
+}
+
 
 .burger-open__list {
   max-width: 930px;

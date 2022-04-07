@@ -20,6 +20,8 @@
   }
 
   @media (max-width: $max-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     min-width: unset;
     min-height: unset;
     background: unset;
@@ -27,6 +29,9 @@
   }
 
   @media (max-width: 640px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     min-width: 100%;
   }
@@ -38,7 +43,7 @@
     background-size: cover;
     background-color: $basic-brown;
     min-width: 339px;
-    min-height: 300px;
+    min-height: 100%;
     margin: 0;
     padding: 0;
 
@@ -84,13 +89,12 @@
   }
 
   @media (max-width: 738px) {
-    min-width: 200px;
+    min-width: 100%;
   }
 
   @media (max-width: 640px) {
     min-height: 256px;
     padding: 62px 60px 20px;
-    min-width: 100%;
   }
 }
 

@@ -149,6 +149,8 @@
   }
 
   &:last-child {
+    word-break: break-word;
+
     @media (max-width: $max-tablet) {
       display: none;
     }
