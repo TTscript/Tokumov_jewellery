@@ -1,6 +1,5 @@
 /* eslint-disable no-inner-declarations */
-// if (window.location.pathname === '/main.html') {
-if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.location.pathname === '/Tokumov_jewellery/build/') {
+if (window.location.pathname === '/main.html' || window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.location.pathname === '/Tokumov_jewellery/build/' || window.location.pathname === '/interns/10_tokumov_jewellery/main.html') {
   ///////////////////////////////////////////////////////////////////SLIDER
   const goods = document.querySelector('.goods__inner');
   const goodsCards = document.querySelectorAll('.goods__card');
@@ -329,8 +328,7 @@ if (window.location.pathname === '/Tokumov_jewellery/build/main.html' || window.
 
   ///////////////////////////////////////////////////ACORDION
 
-// } else if (window.location.pathname === '/catalog.html') {
-} else if (window.location.pathname === '/Tokumov_jewellery/build/catalog.html') {
+} else if (window.location.pathname === '/catalog.html' || window.location.pathname === '/Tokumov_jewellery/build/catalog.html' || window.location.pathname === '/interns/10_tokumov_jewellery/catalog.html') {
 
   ////////////////////////////////////////FILTER
   const filter = document.querySelector('.filter__inner');
@@ -656,6 +654,7 @@ burgerOpenPanel.addEventListener('click', () => {
   burgerOpen.classList.add('burger-open__action');
   loginBlock.classList.remove('page-header__login-block--change-bag');
   logo.classList.remove('page-header__logo--change-color');
+  burgerButton.focus();
 });
 
 const burgerLogin = burgerOpen.querySelector('#burger-login');
@@ -668,19 +667,17 @@ const burgerOpenButton = document.querySelector('#burger-open');
 
 function openBurger() {
   burgerOpen.addEventListener('keydown', trapTabKey);
-  burgerButton.focus();
+  setTimeout(() => {
+    burgerOpenButton.focus();
+  }, 5);
 
   function trapTabKey(e) {
     if (document.activeElement === burgerOpenButton && e.shiftKey && e.code === 'Tab') {
       e.preventDefault();
-      setTimeout(() => {
-        burgerLogin.focus();
-      }, 50);
+      burgerLogin.focus();
     } else if (document.activeElement === burgerLogin && e.code === 'Tab' && !e.shiftKey) {
       e.preventDefault();
-      setTimeout(() => {
-        burgerButton.focus();
-      }, 50);
+      burgerOpenButton.focus();
     }
   }
 }

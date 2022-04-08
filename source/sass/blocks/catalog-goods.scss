@@ -18,4 +18,8 @@
   @media (min-width: $max-tablet) and (max-width: 1260px) {
     max-width: 660px;
   }
+
+  @media (max-width: 480px) {
+    max-width: 400px;
+  }
 }
