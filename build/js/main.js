@@ -579,7 +579,6 @@ function noScroll() {
 
 function scrollBurger() {
   if (window.innerHeight < 820) {
-    console.log('wwwww');
     burgerList.style.maxHeight = `${window.innerHeight - 240}px`;
     burgerList.style.overflow = 'scroll';
   }
