@@ -120,7 +120,11 @@
       height: 20px;
     }
 
-    @media (max-width: 435px) {
+    @media (min-width: 321px) and (max-width: 450px) {
+      left: 17px;
+    }
+
+    @media (max-width: 410px) {
       top: -40px;
     }
   }

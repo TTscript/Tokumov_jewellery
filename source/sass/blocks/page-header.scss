@@ -112,6 +112,7 @@
 
 .page-header__login-block {
   display: flex;
+  flex-wrap: wrap;
   z-index: 2;
   max-width: 150px;
   margin: 0;
@@ -139,6 +140,10 @@
   line-height: 21px;
   margin: 0;
   padding: 0;
+
+  &:nth-child(odd) {
+    margin-right: 35px;
+  }
 
   &:first-child {
     margin-right: 35px;

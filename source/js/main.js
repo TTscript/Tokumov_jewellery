@@ -16,14 +16,11 @@ if (window.location.pathname === '/main.html' || window.location.pathname === '/
   const mediaQueryPreMobile = window.matchMedia('(min-width: 500px) and (max-width: 767px)');
   const mediaQueryMobile = window.matchMedia('(max-width: 499px)');
 
-
   //PAGINATION COLORS
 
   let activeNumber = false;
   const desktopFigures = Array.from(document.querySelector('.pagination__desktop').querySelectorAll('button'));
   const tabletFigures = Array.from(document.querySelector('.pagination__tablet').querySelectorAll('button'));
-  let numberTwo = false;
-  let numberThree = false;
 
   function pagination(figures, screen) {
     figures.forEach((elem) => {
@@ -35,46 +32,31 @@ if (window.location.pathname === '/main.html' || window.location.pathname === '/
         }
         elem.classList.add(`pagination__${screen}--active-number`);
         activeNumber = true;
-        if (elem.textContent === '1') {
-          numberTwo = false;
-          numberThree = false;
-        } else if (elem.textContent === '2') {
-          numberTwo = true;
-          numberThree = false;
-        } else if (elem.textContent === '3') {
-          numberTwo = false;
-          numberThree = true;
-        } else if (elem.textContent === '4') {
-          numberTwo = false;
-          numberThree = false;
-        } else if (elem.textContent === '5') {
-          numberTwo = false;
-          numberThree = false;
-        } else if (elem.textContent === '6') {
-          numberTwo = false;
-          numberThree = false;
-        }
       });
     });
   }
 
   //ARROWS
 
-  let leftArrowNum = 0;
-  let rightArrowNum = 0;
   let width;
 
   function changeImagesSize() {
-    moveArrowsDesktopSlider(paginationDesktopNumbers, 1200);
-    pagination(desktopFigures, 'desktop');
-    swipeFigures(paginationDesktopNumbers, 1200);
+    const sliderWidth = document.querySelector('.new-entries__goods-wrapper').offsetWidth;
 
     if (mediaQueryOther.matches) {
+      moveArrowsSlider(paginationDesktopNumbers, 1200);
+      pagination(desktopFigures, 'desktop');
+      swipeFigures(paginationDesktopNumbers, 1200);
+
       images.forEach((item) => {
         item.style.width = '270px';
         item.style.height = 'auto';
       });
     } else if (mediaQueryDesktop.matches) {
+      moveArrowsSlider(paginationDesktopNumbers, sliderWidth + 20);
+      pagination(desktopFigures, 'desktop');
+      swipeFigures(paginationDesktopNumbers, sliderWidth + 20);
+
       width = goodsWrapper.offsetWidth;
       goods.style.width = `${width * images.length}px`;
 
@@ -87,7 +69,7 @@ if (window.location.pathname === '/main.html' || window.location.pathname === '/
         item.style.height = 'auto';
       });
     } else if (mediaQueryTablet.matches) {
-      moveArrowsTabletSlider(paginationTabletNumbers, 707);
+      moveArrowsSlider(paginationTabletNumbers, 707);
       pagination(tabletFigures, 'tablet');
       swipeFigures(paginationTabletNumbers, 707);
 
@@ -100,7 +82,7 @@ if (window.location.pathname === '/main.html' || window.location.pathname === '/
         item.style.height = 'auto';
       });
     } else if (mediaQueryPreMobile.matches) {
-      moveArrowsTabletSlider(paginationTabletNumbers, 707);
+      moveArrowsSlider(paginationTabletNumbers, 707);
       pagination(tabletFigures, 'tablet');
       swipeFigures(paginationTabletNumbers, 707);
 
@@ -140,8 +122,21 @@ if (window.location.pathname === '/main.html' || window.location.pathname === '/
     changeImagesSize();
   });
 
-  function moveArrowsDesktopSlider(screen, sizes) {
+  let leftArrowNum = 0;
+  let rightArrowNum = 0;
+  let clickOnFigures = false;
+  let clickLeftArrow = false;
+  let clickRightArrow = false;
+
+  function moveArrowsSlider(screen, sizes = 1200) {
     leftArrow.addEventListener('click', () => {
+      clickLeftArrow = true;
+      rightArrowNum = 0;
+
+      setTimeout(() => {
+        clickOnFigures = false;
+        clickRightArrow = false;
+      }, 50);
 
       leftArrowNum = leftArrowNum - sizes;
 
@@ -149,70 +144,40 @@ if (window.location.pathname === '/main.html' || window.location.pathname === '/
         return getComputedStyle(goods).transform;
       }
 
-      if (leftArrowNum < 0 && !numberTwo) {
-        leftArrowNum = (screen.length - 1) * sizes;
-      } else if (numberTwo && leftArrowNum < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, -1200, 0)') {
+      if (getGoodsStyles() !== 'matrix(1, 0, 0, 1, 0, 0)' && clickOnFigures === true) {
         leftArrowNum = 0;
-      } else if (numberTwo && leftArrowNum < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, 0, 0)') {
+      } else if (getGoodsStyles() !== 'matrix(1, 0, 0, 1, 0, 0)' && clickRightArrow === true) {
+        leftArrowNum = 0;
+      } else if (leftArrowNum < 0) {
         leftArrowNum = (screen.length - 1) * sizes;
-      } else if (numberThree && leftArrow < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, -2400, 0)') {
-        leftArrowNum = -1200;
       }
 
-      goods.style.transform = `translateX(-${(leftArrowNum)}px)`;
+      goods.style.transform = `translateX(${-(leftArrowNum)}px)`;
     });
 
     rightArrow.addEventListener('click', () => {
-      rightArrowNum = rightArrowNum + sizes;
-      function getGoodsStyles() {
-        return getComputedStyle(goods).transform;
-      }
-
-      if (rightArrowNum > (screen.length - 1) * sizes) {
-        rightArrowNum = 0;
-      } else if (numberTwo && getGoodsStyles() === 'matrix(1, 0, 0, 1, -1200, 0)') {
-        rightArrowNum = 2400;
-      } else if (numberTwo && getGoodsStyles() === 'matrix(1, 0, 0, 1, 0, 0)') {
-        rightArrowNum = 1200;
-      }
-
-      goods.style.transform = `translateX(${-rightArrowNum}px)`;
-    });
-  }
-
-
-  function moveArrowsTabletSlider(screen, sizes) {
-    leftArrow.addEventListener('click', () => {
-      leftArrowNum = leftArrowNum - sizes;
+      clickRightArrow = true;
+      leftArrowNum = 0;
 
       function getGoodsStyles() {
         return getComputedStyle(goods).transform;
       }
 
-      if (leftArrowNum < 0 && !numberTwo) {
-        leftArrowNum = (screen.length - 1) * sizes;
-      } else if (numberTwo && leftArrowNum < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, -707, 0)') {
-        leftArrowNum = 0;
-      } else if (numberTwo && leftArrowNum < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, 0, 0)') {
-        leftArrowNum = (screen.length - 1) * sizes;
-      } else if (numberThree && leftArrow < 0 && getGoodsStyles() === 'matrix(1, 0, 0, 1, -1414, 0)') {
-        leftArrowNum = -707;
-      }
+      setTimeout(() => {
+        clickOnFigures = false;
+        clickLeftArrow = false;
+      }, 50);
 
-      goods.style.transform = `translateX(-${(leftArrowNum)}px)`;
-    });
-
-    rightArrow.addEventListener('click', () => {
       rightArrowNum = rightArrowNum + sizes;
-      const goodsStyles = getComputedStyle(goods).transform;
 
-
-      if (rightArrowNum > (screen.length - 1) * sizes) {
+      if (getGoodsStyles() !== 'matrix(1, 0, 0, 1, 0, 0)' && clickOnFigures === true) {
+        goods.style.transform = 'translateX(0)';
         rightArrowNum = 0;
-      } else if (numberTwo && goodsStyles === 'matrix(1, 0, 0, 1, -1200, 0)') {
-        rightArrowNum = 2400;
-      } else if (numberTwo && goodsStyles === 'matrix(1, 0, 0, 1, 0, 0)') {
-        rightArrowNum = 1200;
+      } else if (getGoodsStyles() !== 'matrix(1, 0, 0, 1, 0, 0)' && clickLeftArrow === true) {
+        goods.style.transform = 'translateX(0)';
+        rightArrowNum = 0;
+      } else if (rightArrowNum > (screen.length - 1) * sizes) {
+        rightArrowNum = 0;
       }
 
       goods.style.transform = `translateX(${-rightArrowNum}px)`;
@@ -225,7 +190,7 @@ if (window.location.pathname === '/main.html' || window.location.pathname === '/
     screenNums.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
-
+        clickOnFigures = true;
         if (e.target.textContent === '1') {
           goods.style.transform = 'translate(0)';
         } else if (e.target.textContent === '2') {
@@ -464,6 +429,7 @@ const createLoginPopup = () => {
 const closePopupClick = () => {
   loginPopup.remove();
   loginCloseButton.removeEventListener('click', closePopupClick);
+  window.removeEventListener('scroll', noScroll);
 };
 
 const closePopupEsc = (evt) => {
@@ -471,12 +437,14 @@ const closePopupEsc = (evt) => {
     loginPopup.remove();
   }
   window.removeEventListener('keydown', closePopupEsc);
+  window.removeEventListener('scroll', noScroll);
 };
 
 const closePopupOverlay = (evt) => {
   if (evt.target === loginPopup) {
     loginPopup.remove();
     window.removeEventListener('click', closePopupOverlay);
+    window.removeEventListener('scroll', noScroll);
   }
 };
 
@@ -486,13 +454,29 @@ const closePopup = () => {
   window.addEventListener('click', closePopupOverlay);
 };
 
+const popupLoginInner = loginPopup.querySelector('.popup-login__inner');
+
 function install(e) {
   e.preventDefault();
+  popupLoginInner.addEventListener('keydown', loginBlockTab);
+  window.addEventListener('scroll', noScroll);
   createLoginPopup();
   inputMailLogin.focus();
   setTimeout(() => {
     closePopup();
   }, 250);
+}
+
+const popupLoginSignUp = loginPopup.querySelector('.popup-login__sign-up a');
+
+function loginBlockTab(e) {
+  if (document.activeElement === loginCloseButton && e.shiftKey && e.code === 'Tab') {
+    e.preventDefault();
+    popupLoginSignUp.focus();
+  } else if (document.activeElement === popupLoginSignUp && e.code === 'Tab' && !e.shiftKey) {
+    e.preventDefault();
+    loginCloseButton.focus();
+  }
 }
 
 login.addEventListener('click', install);
@@ -587,9 +571,17 @@ const logo = document.querySelector('.page-header__logo');
 const loginBlock = document.querySelector('.page-header__login-block');
 const burgerButton = document.querySelector('.burger-closed').querySelector('button');
 const burgerOpenPanel = document.querySelector('.burger-open__panel');
+const burgerList = document.querySelector('.burger-open__list');
 
 function noScroll() {
   window.scrollTo(0, 0);
+}
+
+function scrollBurger() {
+  if (window.innerHeight < 820) {
+    burgerList.style.maxHeight = `${window.innerHeight - 240}px`;
+    burgerList.style.overflow = 'scroll';
+  }
 }
 
 function checkHeight() {
@@ -608,13 +600,20 @@ navItemArray.forEach((item) => {
 });
 
 burgerOpen.classList.add('burger-open__action');
-const burgerList = document.querySelector('.burger-open__list');
 
 burgerButton.addEventListener('click', () => {
   openBurger();
+  setTimeout(() => {
+  }, 400);
 
   setTimeout(() => {
-    if (burgerList.offsetHeight >= 780) {
+    scrollBurger();
+  }, 200);
+
+  window.addEventListener('resize', scrollBurger);
+
+  setTimeout(() => {
+    if (burgerList.offsetHeight >= 600) {
       burgerList.style.overflow = 'scroll';
     } else {
       burgerList.style.overflow = 'unset';
@@ -622,13 +621,13 @@ burgerButton.addEventListener('click', () => {
   }, 50);
 
   burgerList.addEventListener('DOMNodeInserted', () => {
-    if (burgerList.offsetHeight >= 780) {
+    if (burgerList.offsetHeight >= 600) {
       burgerList.style.overflow = 'scroll';
     }
   });
 
   burgerList.addEventListener('DOMNodeRemoved', () => {
-    if (burgerList.offsetHeight < 780) {
+    if (burgerList.offsetHeight < 600) {
       burgerList.style.overflow = 'unset';
     }
   });
@@ -650,6 +649,7 @@ burgerButton.addEventListener('click', () => {
 
 burgerOpenPanel.addEventListener('click', () => {
   window.removeEventListener('scroll', noScroll);
+  window.removeEventListener('resize', scrollBurger);
   burgerOpenList.removeEventListener('change', checkHeight);
   burgerOpen.classList.add('burger-open__action');
   loginBlock.classList.remove('page-header__login-block--change-bag');
@@ -681,3 +681,5 @@ function openBurger() {
     }
   }
 }
+
+
